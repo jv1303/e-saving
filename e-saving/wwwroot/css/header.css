@@ -1,0 +1,181 @@
+/* styles for the site header */
+
+#main-logo {
+    width: 150px;
+    padding: 10px;
+    margin-left: 8px;
+}
+
+/* main header style */
+header {
+    display: flex;
+    flex-direction: row;                
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #77B255;
+    height: 75px;
+}
+
+/* utilities container style */
+
+/* the utilities container is a
+<div> tag that separates the logo
+from the rest of the content
+        at the header */
+#header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    height: 75px;
+    width: 100%;
+}
+
+/* nav parent tag configuration */
+nav {
+    display: flex;
+    justify-content: end;
+
+    margin: 15px;
+    width: 100%;
+}
+
+/* nav style */
+#nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    list-style: none;
+    width: 800px;
+    padding: 0;
+}
+
+/* nav item style */
+.nav-item {
+    transition: all 200ms ease-in;
+
+    display: flex;
+    flex: 1;
+    justify-content: center;
+
+    text-align: center;
+    width: 100%;
+    padding-right: 8px;
+    padding-left: 8px;
+    font-weight: 500;
+    line-height: 75px;
+    margin: 0;
+}
+.nav-item:hover {
+    transition: all 200ms ease-in;
+
+    font-size: 18px;
+    background-color: #60A640;
+}
+
+/* link normalization for the nav */
+.nav-item a {
+    width: 100%;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* user div style */
+
+/* div containing either sing-in
+and log-in buttons, or the user
+    profile photo and name */
+#user-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin: 8px;
+}
+
+/* styles for the sing-in and log-in buttons */
+#user-div a {
+    transition: all 200ms ease-in;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+
+    border-radius: 20px;
+    margin: 8px;
+    width: 100px;
+    height: 40px;
+}
+#user-div a:hover {
+    transition: all 200ms ease-in;
+
+    border-radius: 25px;
+    height: 50px;
+    width: 120px;
+
+    font-size: 20px;
+}
+
+/* styles for the sing-in button */
+#singin-button {
+    transition: all 200ms ease-in;
+
+    background-color: #fff;
+    color: #77B255;
+}
+
+/* styles for the log-in button */
+#login-button {
+    transition: all 200ms ease-in;
+
+    background-color: #D0FF00;
+    color: #60A640;
+}
+
+/* styles for the button that appears when the user is loged */
+#logged-user-click {
+    transition: all 200ms ease-in;
+
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+
+    height: 55px;
+    border-radius: 50px;
+    padding-left: 10px;
+    width: 180px;
+    color: #60A640;
+    background-color: #D0FF00;
+    cursor: pointer;
+}
+#logged-user-click:hover {
+    transition: all 200ms ease-in;
+
+    background-color: #fff;
+}
+
+/* styles for the user name */
+#user-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* styles for the down arrow icon */
+#user-name img {
+    height: 15px;
+    margin-right: 8px;
+}
+
+/* styles for the user image */
+.header-icon {
+    height: 40px;
+    margin-right: 8px;
+}
