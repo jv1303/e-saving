@@ -9,10 +9,3 @@ body {
 
     margin: 0; /* margin set to 0 to make content fill the entire screen */
 }
-
-/* FOOTER STYLE */
-footer {
-    
-    position: absolute;
-    bottom: 0;
-}

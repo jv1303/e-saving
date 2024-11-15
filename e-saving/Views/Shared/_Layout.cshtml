@@ -6,6 +6,7 @@
     <title>E-Saving @ViewData["Title"]</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/header.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/footer.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/e_saving.styles.css" asp-append-version="true" />
 </head>
 <body>
@@ -57,14 +58,57 @@
         @RenderBody()
     </main>
 
+    
     <footer>
-        <div>
+
+        <div id="footer-container">
+
+            <span id="footer-add"></span>
+
+            <ul id="social-media">
+                <li class="social-media-item">
+                    <a href="https://www.instagram.com/" target="_blank"><img src="~/images/instagram.png" alt="Ícone do Instagram"></a>
+                </li>
+                <li class="social-media-item">
+                    <a href="https://x.com/" target="_blank"><img src="~/images/twitter.png" alt=""></a>
+                </li>
+                <li class="social-media-item">
+                    <a href="tel:+5511999999999" target="_blank"><img src="~/images/telephone.png" alt=""></a>
+                </li>
+                <li class="social-media-item">
+                    <a href="https://www.linkedin.com/" target="_blank"><img src="~/images/linkedin.png" alt=""></a>
+                </li>
+            </ul>
+
+            <ul id="footer-nav">
+                <li class="footer-nav-item">
+                    <a asp-area="" asp-controller="Home" asp-action="QuemSomos">Quem somos?</a>
+                </li>
+                <li class="footer-nav-item">
+                    <a asp-area="" asp-controller="Home" asp-action="PontosColeta">Pontos de coleta</a>
+                </li>
+                <li class="footer-nav-item">
+                    <a asp-area="" asp-controller="Home" asp-action="AreaParceiro">Área do parceiro</a>
+                </li>
+                <li class="footer-nav-item">
+                    <a asp-area="" asp-controller="Home" asp-action="SejaParceiro">Seja parceiro</a>
+                </li>
+                <li class="footer-nav-item">
+                    <a asp-area="" asp-controller="Home" asp-action="SejaComprador">Seja comprador</a>
+                </li>
+                <li class="footer-nav-item">
+                    <a asp-area="" asp-controller="Home" asp-action="">Contatos</a>
+                </li>
+            </ul>
+
             &copy; 2024 - e_saving - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
+        <img src="~/images/footer.png" alt="Imagem vetorial para efeito visual" id="footer-vector">
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/headerUserDiv.js" asp-append-version="true"></script>
+    <script src="~/js/indexFooter.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

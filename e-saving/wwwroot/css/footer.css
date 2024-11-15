@@ -1,0 +1,26 @@
+/* styles for the site footer */
+
+footer {
+    display: flex;
+    flex-direction: column-reverse;
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    height: auto;
+}
+
+#footer-container {
+    margin: 0;
+    background-color: #77B255;
+}
+
+#footer-vector {
+    margin-bottom: -4px;
+    max-width: 100%;
+    height: auto;
+}
+
+.social-media-item a img {
+    width: 50px;
+}
