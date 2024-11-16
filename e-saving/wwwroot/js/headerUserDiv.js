@@ -15,4 +15,4 @@ if (userLogged == true) {
 
 } else {
     userDiv.innerHTML = "<a href='/User/Register' id='singin-button'> Sing in </a> <a href='/User/Login' id='login-button'> Log in </a>";  // puts the sing-in and log-in buttons into the HTML
-}
+} //XDXD
