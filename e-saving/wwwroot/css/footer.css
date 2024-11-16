@@ -1,7 +1,5 @@
 /* styles for the site footer */
 
-/*teste*/
-
 /* main footer styles */
 footer {
     display: flex;
@@ -66,7 +64,7 @@ footer {
     margin-bottom: 15px;
 }
 .footer-nav-item a {
-    transition: all 200ms ease-in;
+    transition: all 100ms ease-in;
 
     color: #fff;
     font-weight: 300;
@@ -74,7 +72,7 @@ footer {
     margin: 10px;
 }
 .footer-nav-item a:hover {
-    transition: all 200ms ease-in;
+    transition: all 100ms ease-in;
 
     color: #c7ffa7;
 }
