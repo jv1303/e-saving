@@ -1,5 +1,6 @@
 /* styles for the site footer */
 
+/* main footer styles */
 footer {
     display: flex;
     flex-direction: column-reverse;
@@ -10,17 +11,77 @@ footer {
     height: auto;
 }
 
+/* vectorial image configuration */
+#footer-vector {
+    margin-bottom: -4px; /* necessary to make the image stick with the footer */
+    max-width: 100%;
+    height: auto;
+}
+
+/* footer container configuration */
 #footer-container {
     margin: 0;
     background-color: #77B255;
 }
 
-#footer-vector {
-    margin-bottom: -4px;
-    max-width: 100%;
-    height: auto;
+/* display flex for the footer-lists and footer-info */
+#footer-container div {
+    display: flex;
 }
 
+/* footer-lists div configuration */
+#footer-lists {
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* contact links list style */
+#social-media {
+    display: flex;
+    justify-content: center;
+
+    list-style: none;
+    padding: 0;
+}
+.social-media-item {
+    margin: 10px;
+}
+/* contact links icons */
 .social-media-item a img {
     width: 50px;
+}
+
+/* footer nav styles */
+#footer-nav {
+    display: flex;
+    
+    padding: 0;
+    text-align: center;
+    list-style: none;
+}
+.footer-nav-item {
+    margin: 10px;
+    margin-bottom: 15px;
+}
+.footer-nav-item a {
+    transition: all 200ms ease-in;
+
+    color: #fff;
+    font-weight: 300;
+    font-size: 18px;
+    margin: 10px;
+}
+.footer-nav-item a:hover {
+    transition: all 200ms ease-in;
+
+    color: #c7ffa7;
+}
+
+/* footer-info div configuration */
+#footer-info {
+    justify-content: space-between;
+}
+#footer-info h6 {
+    margin: 0 20px 10px 20px;
+    color: #427724;
 }

@@ -3,6 +3,8 @@
 ##
 ## Get latest from `dotnet new gitignore`
 
+repositorio-local.sln
+
 # dotenv files
 .env
 
