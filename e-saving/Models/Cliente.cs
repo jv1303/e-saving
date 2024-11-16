@@ -13,8 +13,10 @@ public class Cliente
 
         public byte[] ItensDescartados {get; set;} // cabível alterações
 
-        public
+        public int PontosCliente {get; set;}
 
+        public string PontoFavoritoCliente {get; set;}
+        
     }
 
 }
