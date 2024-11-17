@@ -43,7 +43,7 @@
 #index-img {
     justify-self: flex-end;
     margin-left: 300px;
-    height: 600px;
+    width: 900px;
 }
 
 h2 {
@@ -80,4 +80,35 @@ h2 {
 #index-top h3 {
     font-size: 35px;
     font-weight: 200;
+}
+
+#como-funciona {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#como-funciona h3 {
+    color: #77B255;
+    font-size: 46px;
+}
+.como-funciona-section {
+    display: flex;
+    align-items: center;
+    width: 800px;
+}
+.numb-display {
+    margin: 0 20px 0 0;
+    font-size: 300px;
+    color: #77B255;
+    font-weight: 800;
+}
+.como-funciona-p h4 {
+    font-size: 54px;
+    font-weight: 200;
+    color: #77B255;
+    margin: 0;
+}
+.como-funciona-p p {
+    font-size: 32px;
+    font-weight: 300;
 }
