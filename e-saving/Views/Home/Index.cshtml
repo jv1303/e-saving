@@ -2,7 +2,49 @@
     ViewData["Title"] = "Home Page";
 }
 
+<asp:content contentplaceholderid="head" runat="server">
+    <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+</asp:content>
+
+
 <div>
-    <h2>Welcome</h2>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div id="top-container">
+        <img src="~/images/hpImage.png" alt="Imagem de uma lâmpada com plantas dentro" id="index-img">
+        <div id="index-top">
+            <h2><span id="h2-1">O FUTURO</span><br><span id="h2-2">MAIS</span><br><span id="h2-3">SUSTENTÁVEL</span></h2>
+            <h3>Tecnologia salvando tecnologia</h3>
+        </div>
+    </div>
+
+    <div>
+        <h3>Como funciona?</h3>
+
+        <section>
+            <div>1</div>
+            <div>
+                <h4>Coleta e triagem</h4>
+                <p>
+                    O lixo eletrônico é coletado e enviado ao nosso centro de processamento, onde ele será triado para devido tratamento.
+                </p>
+            </div>
+        </section>
+        <section>
+            <div>2</div>
+            <div>
+                <h4>Processamento</h4>
+                <p>
+                    Após triado, o lixo recebe o devido tratamento, que pode ser desmanche, reparo ou testagem, dependendo do seu estado.
+                </p>
+            </div>
+        </section>
+        <section>
+            <div>3</div>
+            <div>
+                <h4>Retorno</h4>
+                <p>
+                    Após o devido processamento, os itens que foram recuperados são colocados à venda para os nossos compradores
+                </p>
+            </div>
+        </section>
+    </div>
 </div>
