@@ -35,18 +35,15 @@
 }
 
 #top-container {
-    display: grid;
-
-    height: 600px;
+    display: flex;
+    justify-content: center;
 }
 
 #index-img {
-    justify-self: flex-end;
-    margin-left: 300px;
-    width: 900px;
+    width: 80%;
 }
 
-h2 {
+/* h2 {
     line-height: 0.9;
     color: #77B255;
 
@@ -64,22 +61,30 @@ h2 {
 #h2-3 {
     font-size: 72px;
     font-weight: 800;
-}
+} 
 
 #index-top {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: absolute;
-    left: 12%;
-    top: 17%;
-
-    margin-left: 100px;
 }
 
 #index-top h3 {
     font-size: 35px;
     font-weight: 200;
+} */
+
+#como-funciona-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#como-funciona-content img {
+    margin-right: 8%;
+    max-height: 90vh;
+
 }
 
 #como-funciona {
