@@ -1,32 +1,30 @@
-using e_saving.Models;
 using Microsoft.EntityFrameworkCore;
+using e_saving.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Register DbContext with the correct connection string from appsettings.json
-builder.Services.AddDbContext<Contexto>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("ConexaoSQLite")));
-
-// Add services to the container (e.g., controllers)
+// adciona o serviço de contexto do nosso db
+builder.Services.AddDbContext<Contexto>(opcoes=>opcoes.UseSqlite(builder.Configuration.GetConnectionString("ConexaoSQLite")));
+// Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline (e.g., routing, error handling)
-if (app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
-}
-else
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
+app.UseHttpsRedirection();
 app.UseStaticFiles();
+
 app.UseRouting();
 
-// Define default route for controllers
+app.UseAuthorization();
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
