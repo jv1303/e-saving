@@ -19,10 +19,10 @@ h1 {
     display: flex;
     justify-content: center;
 } h1 a {
+    margin-top: 40px;
     width: 40%;
     height: auto;
 } #main-logo {
-    margin-top: 40px;
     width: 100%;
 }
 
@@ -60,8 +60,6 @@ footer {
     font-weight: 200;
 }
 
-/****** RenderBody styles :) ******/
-
 /* styles for the subtitle */
 h2 {
     margin-top: 40px;
@@ -81,8 +79,11 @@ form {
 #submit-button {
     transition: all 200ms ease-in;
     
-    padding: 25px 22% 25px 22%;
-    margin-bottom: 40px;
+    width: 72%;
+    height: 80px;
+    /* padding: 25px 22% 25px 22%; */
+    margin-bottom: 30px;
+    margin-top: 30px;
 
     border-style: none;
     border-radius: 10px;
@@ -92,11 +93,139 @@ form {
     color: #fff;
     font-size: 26px;
     font-weight: 300;
-} #submit-button:hover {
+} #submit-button:hover,
+#submit-button:focus {
     transition: all 200ms ease-in;
 
     background-color: #8ec96d;
+    outline: 0;
 
     box-shadow: 0 0 10px -2px #77B255;
     cursor: pointer;
+}
+
+/****** RenderBody styles :) ******/
+
+/* form configs */
+.user-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+}
+
+/* all labels config */
+label {
+    cursor: pointer;
+}
+
+/* styles for string inputs */
+.text-input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 68%;
+    margin-right: 4%;
+} .text-input input {
+    transition: all 100ms ease-in;
+
+    width: 100%;
+    max-width: 100%;
+    height: 60px;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    font-size: 16px;
+
+    border: solid #77B255 2px;
+    border-radius: 5px;
+} .text-input input:focus {
+    transition: all 100ms ease-in;
+
+    border-color: #8ec96d;
+    box-shadow: 0 0 5px 0px #77B255;
+    outline: 0;
+}
+
+/* checkbox styles */
+.checkbox-input {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 72%;
+    justify-content: flex-end;
+    align-items: center;
+}
+.checkbox-input label {
+    user-select: none;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 300;
+} .checkbox-input label:hover,
+.checkbox-input label:focus {
+    color: #577e41;
+}
+.checkbox-input .checkbox-element {
+  appearance: none;
+  background-color: #dfe1e4;
+  border-radius: 72px;
+  border-style: none;
+  flex-shrink: 0;
+  height: 30px;
+  margin: 0;
+  position: relative;
+  width: 50px;
+}
+.checkbox-input .checkbox-element::before {
+  bottom: -6px;
+  content: "";
+  left: -6px;
+  position: absolute;
+  right: -6px;
+  top: -6px;
+}
+.checkbox-input .checkbox-element,
+.checkbox-input .checkbox-element::after {
+  transition: all 100ms ease-out;
+}
+.checkbox-input .checkbox-element::after {
+  background-color: #fff;
+  border-radius: 50%;
+  content: "";
+  height: 22px;
+  left: 6px;
+  position: absolute;
+  top: 4px;
+  width: 22px;
+}
+.checkbox-input input[type=checkbox] {
+  cursor: default;
+}
+.checkbox-input .checkbox-element:hover {
+  background-color: #c9cbcd;
+  transition-duration: 0s;
+}
+.checkbox-input .checkbox-element:checked {
+  background-color: #77B255;
+}
+.checkbox-input .checkbox-element:checked::after {
+  background-color: #fff;
+  left: 22px;
+}
+.checkbox-input :focus:not(.focus-visible) {
+  outline: 0;
+}
+.checkbox-input .checkbox-element:checked:hover {
+  background-color: #8ec96d;
+}
+
+/* forgot password link */
+.form-link {
+    color: #77B255;
+    font-size: 18px;
+    margin-bottom: 40px;
+} .form-link:hover,
+.form-link:focus {
+    color: #8ec96d;
+    outline: 0;
 }

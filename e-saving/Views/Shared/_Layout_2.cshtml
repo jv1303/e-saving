@@ -22,8 +22,10 @@
 
             <form method="post" asp-action="@ViewData["Action"]">
                 @RenderBody()
-                <input type="submit" value="@ViewData["Submit"]" id="submit-button">
+                <input type="submit" value="@ViewData["Submit"]" id="submit-button" tabindex="@ViewData["SubmitTabIndex"]">
+                <a href="#" class="form-link" tabindex="@ViewData["ExtraTabIndex"]">@ViewData["Extra"]</a>
             </form>
+
         </div>
     </main>
 

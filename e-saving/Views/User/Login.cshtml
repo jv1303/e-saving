@@ -1,9 +1,25 @@
-@{
+@{  
     Layout = "~/Views/Shared/_Layout_2.cshtml";
     ViewData["Title"] = "Log in";
     ViewData["Action"] = "Register";
     ViewData["Submit"] = "Iniciar Sessão";
+    ViewData["SubmitTabIndex"] = 4;
+    ViewData["Extra"] = "Esqueci minha senha";
+    ViewData["ExtraTabIndex"] = 5;
 }
 
-<div>
+<div id="login-form" class="user-form">
+    <div class="text-input">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" tabindex="1" autofocus>
+    </div>
+    <div class="text-input">
+        <label for="password">Senha</label>
+        <input type="password" name="password" id="password" tabindex="2">
+    </div>
+    <div class="checkbox-input">
+        <label for="remember" tabindex="3"> Mantenha-me conectado</label>
+        <input type="checkbox" name="remember" id="remember" class="sc-gJwTLC checkbox-element" checked>
+    </div>
 </div>
+
