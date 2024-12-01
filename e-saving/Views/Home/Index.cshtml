@@ -2,26 +2,52 @@
     ViewData["Title"] = "Home Page";
 }
 
+@* link for the page CSS *@
 <asp:content contentplaceholderid="head" runat="server">
     <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
 </asp:content>
 
 
 <div>
+    @* TOP IMAGE *@
     <div id="top-container">
+
+        @******** DISCARDED CODE ********@
+        @* might get deleted eventually *@
+
         @* <div id="index-top">
             <h2><span id="h2-1">O FUTURO</span><br><span id="h2-2">MAIS</span><br><span id="h2-3">SUSTENTÁVEL</span></h2>
             <h3>Tecnologia salvando tecnologia</h3>
         </div> *@
+
+        @********************************@
+
         <img src="~/images/hpImage.png" alt="Imagem de uma lâmpada com plantas dentro" id="index-img">
     </div>
 
+    @* MAIN CONTENT *@
     <div id="como-funciona">
         <h3>Como funciona?</h3>
 
+        @* div for both the image and the sections *@
         <div id="como-funciona-content">
+
+            @* cellphone image *@
             <img src="~/images/phone.png" alt="Mockup de uma celular com uma tela de estatísticas da E-Saving">
-            <div id="cm-fcn-sections">
+
+            @* div for the sections *@
+            <div>
+
+                @* SECTION STRUCTURE *@
+
+                @* section tag *@
+                    @* number *@
+                    @* div to separate the number from the text *@
+                        @* subtitle *@
+                        @* paragraph *@
+                    @* </> *@
+                @* </> *@
+
                 <section class="como-funciona-section">
                     <div class="numb-display">1</div>
                     <div class="como-funciona-p">
@@ -31,6 +57,7 @@
                         </p>
                     </div>
                 </section>
+
                 <section class="como-funciona-section">
                     <div class="numb-display">2</div>
                     <div class="como-funciona-p">
@@ -40,6 +67,7 @@
                         </p>
                     </div>
                 </section>
+
                 <section class="como-funciona-section">
                     <div class="numb-display">3</div>
                     <div class="como-funciona-p">
@@ -49,6 +77,7 @@
                         </p>
                     </div>
                 </section>
+                
             </div>
         </div>
     </div>

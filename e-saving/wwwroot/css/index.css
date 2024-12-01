@@ -1,8 +1,13 @@
+/* styles for the footer buttons */
+
+/* configuration for the span tag that will contain the button added via JS */
 #footer-add {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+/* styles for both the buttons */
 #footer-add a {
     transition: all 100ms ease-in;
 
@@ -28,20 +33,24 @@
     background-color: #fff;
     color: #60A640;
 }
+/* styles for the text inside the buttons */
 #footer-add h3 {
     font-size: 25px;
     font-weight: 200;
     color: #fff;
 }
 
+/* styles for the image at the top of the page */
 #top-container {
     display: flex;
     justify-content: center;
 }
-
 #index-img {
     width: 80%;
 }
+
+/******** DISCARDED CODE ********/
+/* might get deleted eventually */
 
 /* h2 {
     line-height: 0.9;
@@ -74,6 +83,23 @@
     font-weight: 200;
 } */
 
+/***** END OF DISCARDED CODE ****/
+
+/* styles for the page content */
+
+/* main div configs */
+#como-funciona {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* styles for the title */
+#como-funciona h3 {
+    color: #77B255;
+    font-size: 46px;
+}
+
+/* content div configs */
 #como-funciona-content {
     display: flex;
     flex-direction: row;
@@ -81,39 +107,34 @@
     justify-content: center;
 }
 
+/* cellphone imgage */
 #como-funciona-content img {
     margin-right: 8%;
     max-height: 90vh;
-
 }
 
-#como-funciona {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#como-funciona h3 {
-    color: #77B255;
-    font-size: 46px;
-}
+/* content sections styles */
 .como-funciona-section {
     display: flex;
     align-items: center;
     width: 800px;
 }
+/* number */
 .numb-display {
     margin: 0 20px 0 0;
     font-size: 300px;
     color: #77B255;
     font-weight: 800;
 }
+/* text (both paragraph and subtitle) */
+.como-funciona-p p {
+    font-size: 32px;
+    font-weight: 300;
+}
+/* subtitle */
 .como-funciona-p h4 {
     font-size: 54px;
     font-weight: 200;
     color: #77B255;
     margin: 0;
-}
-.como-funciona-p p {
-    font-size: 32px;
-    font-weight: 300;
 }
