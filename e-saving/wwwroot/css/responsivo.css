@@ -1,25 +1,42 @@
+/* Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita rolagem horizontal desnecessária */
+}
+
 /* Header Container */
 #header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 20px;
-    flex-wrap: nowrap; /* Mantém os itens em linha, mesmo em telas menores */
-    overflow-x: auto; /* Permite rolagem horizontal se necessário */
+    padding: 10px 20px;
+    overflow-x: hidden; /* Impede rolagem horizontal */
+}
+
+/* Logo */
+#main-logo {
+    max-width: 120px;
+    height: auto;
 }
 
 /* Navegação */
 nav {
     display: flex;
-    flex-wrap: nowrap; /* Evita quebra de linha nos itens do menu */
     align-items: center;
     justify-content: flex-start;
 }
 
 #nav-list {
     display: flex;
-    gap: 15px; /* Espaçamento entre os itens do menu */
+    gap: 15px;
 }
 
 .nav-item a {
@@ -27,91 +44,101 @@ nav {
     color: #000;
     padding: 5px 10px;
     border-radius: 5px;
-    transition: background-color 0.3s;
-    white-space: nowrap; /* Evita que o texto dos links quebre */
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap; /* Evita quebra de texto nos links */
 }
 
 .nav-item a:hover {
     background-color: #f0f0f0;
+    color: #333;
 }
 
-/* Logo */
-#main-logo {
-    max-width: 100px;
-    height: auto;
-}
-
-/* Container do usuário */
-#user-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0; /* Impede que esse elemento seja reduzido ao extremo */
-}
-
-/* CSS para o Menu Hambúrguer */
+/* Botão do Menu Hambúrguer */
 .hamburger {
-    display: none; /* Ocultar em telas grandes */
+    display: none; /* Oculto em telas grandes */
     font-size: 2rem;
     background: none;
     border: none;
     color: #333;
     cursor: pointer;
+    z-index: 1000; /* Garante que o botão fique acima do menu */
 }
 
+/* Menu principal */
 .menu {
-    display: flex; /* Padrão para telas grandes */
+    display: flex;
     flex-direction: row;
     gap: 20px;
 }
-/*responsivo*/
+
+/* Responsivo: Telas menores */
 @media (max-width: 768px) {
     #header-container {
-        padding: 0 10px; /* Reduz o espaçamento lateral */
+        padding: 0 10px;
     }
 
     #main-logo {
-        max-width: 80px; /* Diminui a logo em telas menores */
-    }
-
-    .nav-item a {
-        font-size: 14px; /* Reduz o tamanho da fonte nos links */
+        max-width: 100px;
     }
 
     .hamburger {
-        display: block; /* Exibir botão em telas pequenas */
+        display: block;
     }
 
     .menu {
-        display: none; /* Esconder menu por padrão */
+        display: none;
         flex-direction: column;
         background: #f9f9f9;
         position: absolute;
-        top: 60px;
+        top: 70px;
         right: 20px;
         width: 200px;
         padding: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        z-index: 999; /* Sobrepõe outros elementos */
+        animation: fadeIn 0.3s ease-in-out;
     }
 
     .menu.active {
-        display: flex; /* Exibir menu quando ativo */
+        display: flex; /* Exibe menu */
     }
 
     .menu ul {
         flex-direction: column;
         gap: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    #main-logo {
-        max-width: 120px;
+        list-style: none;
     }
 
-    .nav-item a {
-        font-size: 14px;
+    .menu ul li a {
+        color: #333;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .menu ul li a:hover {
+        background-color: #ddd;
+    }
+
+    #footer-container {
+        flex-direction: column; /* Alinha tudo na vertical */
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+    }
+
+    #footer-lists {
+        flex-direction: column; /* Listas em coluna */
+        align-items: center;
+        gap: 20px;
+    }
+
+    #social-media, #footer-nav {
+        gap: 10px;
+        align-items: center;
     }
 
     #footer-info {
@@ -119,3 +146,53 @@ nav {
     }
 }
 
+/* Responsivo: Telas menores que 480px */
+@media (max-width: 480px) {
+    #main-logo {
+        max-width: 80px;
+    }
+
+    .nav-item a {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        width: 100%; /* Menu ocupa largura total */
+        top: 60px;
+        right: 0;
+    }
+
+    #footer-container {
+        padding: 10px;
+    }
+
+    #footer-lists {
+        gap: 15px;
+    }
+
+    #social-media, #footer-nav {
+        gap: 8px;
+    }
+
+    #footer-info {
+        font-size: 12px;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
