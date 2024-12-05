@@ -30,8 +30,8 @@ h1 {
 #fields {
     transition: all 300ms ease-in;
 
-    max-width: 550px;
-    min-height: 300px;
+    max-width: 510px;
+    /* max-height: 720px; */
 
     box-shadow: 0 0 10px -3px rgba(0, 0, 0, 255);
     border-radius: 40px;
@@ -228,4 +228,8 @@ label {
 .form-link:focus {
     color: #8ec96d;
     outline: 0;
+}
+
+.hidden {
+    display: none;
 }

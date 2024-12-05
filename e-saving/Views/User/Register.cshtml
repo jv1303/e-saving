@@ -8,5 +8,29 @@
     ViewData["ExtraTabIndex"] = -1;
 }
 
-<div>
+<div id="register-user-form" class="user-form">
+    <div class="user-input text-input display-2">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" tabindex="1" autofocus>
+    </div>
+    <div class="user-input text-input display-2">
+        <label for="email-confirm">Confirmar o email</label>
+        <input type="email" name="email" id="email-confirm" tabindex="1" autofocus>
+    </div>
+    <div class="user-input text-input display-1 hidden">
+        <label for="password">Senha</label>
+        <input type="password" name="password" id="password" tabindex="2">
+    </div>
+        <div class="user-input text-input display-1 hidden">
+        <label for="password-confirm">Senha</label>
+        <input type="password" name="password" id="password-confirm" tabindex="2">
+    </div>
+    <div class="user-input checkbox-input display-1 hidden">
+        <label for="terms" tabindex="3"> Concordo com os termos de uso e política de privacidade</label>
+        <input type="checkbox" name="terms" id="terms" class="sc-gJwTLC checkbox-element">
+    </div>
 </div>
+
+<script>
+    inputCount = 2
+</script>
