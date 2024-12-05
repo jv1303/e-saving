@@ -2,49 +2,83 @@
     ViewData["Title"] = "Home Page";
 }
 
+@* link for the page CSS *@
 <asp:content contentplaceholderid="head" runat="server">
     <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
 </asp:content>
 
 
 <div>
+    @* TOP IMAGE *@
     <div id="top-container">
-        <img src="~/images/hpImage.png" alt="Imagem de uma lâmpada com plantas dentro" id="index-img">
-        <div id="index-top">
+
+        @******** DISCARDED CODE ********@
+        @* might get deleted eventually *@
+
+        @* <div id="index-top">
             <h2><span id="h2-1">O FUTURO</span><br><span id="h2-2">MAIS</span><br><span id="h2-3">SUSTENTÁVEL</span></h2>
             <h3>Tecnologia salvando tecnologia</h3>
-        </div>
+        </div> *@
+
+        @********************************@
+
+        <img src="~/images/hpImage.png" alt="Imagem de uma lâmpada com plantas dentro" id="index-img">
     </div>
 
+    @* MAIN CONTENT *@
     <div id="como-funciona">
         <h3>Como funciona?</h3>
 
-        <section class="como-funciona-section">
-            <div class="numb-display">1</div>
-            <div class="como-funciona-p">
-                <h4>Coleta e triagem</h4>
-                <p>
-                    O lixo eletrônico é coletado e enviado ao nosso centro de processamento, onde ele será triado para devido tratamento.
-                </p>
+        @* div for both the image and the sections *@
+        <div id="como-funciona-content">
+
+            @* cellphone image *@
+            <img src="~/images/phone.png" alt="Mockup de uma celular com uma tela de estatísticas da E-Saving">
+
+            @* div for the sections *@
+            <div>
+
+                @* SECTION STRUCTURE *@
+
+                @* section tag *@
+                    @* number *@
+                    @* div to separate the number from the text *@
+                        @* subtitle *@
+                        @* paragraph *@
+                    @* </> *@
+                @* </> *@
+
+                <section class="como-funciona-section">
+                    <div class="numb-display">1</div>
+                    <div class="como-funciona-p">
+                        <h4>Coleta e triagem</h4>
+                        <p>
+                            O lixo eletrônico é coletado e enviado ao nosso centro de processamento, onde ele será triado para devido tratamento.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="como-funciona-section">
+                    <div class="numb-display">2</div>
+                    <div class="como-funciona-p">
+                        <h4>Processamento</h4>
+                        <p>
+                            Após triado, o lixo recebe o devido tratamento, que pode ser desmanche, reparo ou testagem, dependendo do seu estado.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="como-funciona-section">
+                    <div class="numb-display">3</div>
+                    <div class="como-funciona-p">
+                        <h4>Retorno</h4>
+                        <p>
+                            Após o devido processamento, os itens que foram recuperados são colocados à venda para os nossos compradores.
+                        </p>
+                    </div>
+                </section>
+                
             </div>
-        </section>
-        <section class="como-funciona-section">
-            <div class="numb-display">2</div>
-            <div class="como-funciona-p">
-                <h4>Processamento</h4>
-                <p>
-                    Após triado, o lixo recebe o devido tratamento, que pode ser desmanche, reparo ou testagem, dependendo do seu estado.
-                </p>
-            </div>
-        </section>
-        <section class="como-funciona-section">
-            <div class="numb-display">3</div>
-            <div class="como-funciona-p">
-                <h4>Retorno</h4>
-                <p>
-                    Após o devido processamento, os itens que foram recuperados são colocados à venda para os nossos compradores.
-                </p>
-            </div>
-        </section>
+        </div>
     </div>
 </div>

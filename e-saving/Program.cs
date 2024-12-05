@@ -1,5 +1,10 @@
+using Microsoft.EntityFrameworkCore;
+using e_saving.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
+// adciona o serviço de contexto do nosso db
+builder.Services.AddDbContext<Contexto>(opcoes=>opcoes.UseSqlite(builder.Configuration.GetConnectionString("ConexaoSQLite")));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

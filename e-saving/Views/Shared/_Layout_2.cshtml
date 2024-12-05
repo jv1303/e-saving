@@ -6,22 +6,33 @@
     <title>E-Saving @ViewData["Title"]</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/e_saving.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/layout2.css" asp-append-version="true" />
 </head>
 <body>
 
-    <h1>
-        <a asp-area="" asp-controller="Home" asp-action="Index">
-            <img src="~/images/logo_color.png" alt="Logo" border="0" id="main-logo">
-        </a>
-    </h1>
-
     <main role="main">
-        @RenderBody()
+        <div id="fields">
+            <h1>
+                <a asp-area="" asp-controller="Home" asp-action="Index" >
+                    <img src="~/images/logo_color.png" alt="Logo" border="0" id="main-logo">
+                </a>
+            </h1>
+
+            <h2>@ViewData["Title"]</h2>
+
+            <form method="post" asp-action="@ViewData["Action"]">
+                @RenderBody()
+                <input type="submit" value="@ViewData["Submit"]" id="submit-button" tabindex="@ViewData["SubmitTabIndex"]">
+                <a href="#" class="form-link" tabindex="@ViewData["ExtraTabIndex"]">@ViewData["Extra"]</a>
+            </form>
+
+        </div>
     </main>
 
     <footer>
         <div>
-            &copy; 2024 - e_saving - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <h6>&copy; E-Saving Serviços de Reciclagem LTDA</h6>
+            <h6>v20241115.1.0</h6>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.SignalR;
 
 namespace e_saving.Models 
@@ -5,6 +6,7 @@ namespace e_saving.Models
 
 public class Cliente 
     {
+        [Key]
         public string CpfCliente {get; set;}
         
         public string NomeCliente {get; set;}
