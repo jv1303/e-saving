@@ -1,0 +1,121 @@
+/* Header Container */
+#header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    flex-wrap: nowrap; /* Mantém os itens em linha, mesmo em telas menores */
+    overflow-x: auto; /* Permite rolagem horizontal se necessário */
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    flex-wrap: nowrap; /* Evita quebra de linha nos itens do menu */
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#nav-list {
+    display: flex;
+    gap: 15px; /* Espaçamento entre os itens do menu */
+}
+
+.nav-item a {
+    font-size: 16px;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    white-space: nowrap; /* Evita que o texto dos links quebre */
+}
+
+.nav-item a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Logo */
+#main-logo {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Container do usuário */
+#user-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Impede que esse elemento seja reduzido ao extremo */
+}
+
+/* CSS para o Menu Hambúrguer */
+.hamburger {
+    display: none; /* Ocultar em telas grandes */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.menu {
+    display: flex; /* Padrão para telas grandes */
+    flex-direction: row;
+    gap: 20px;
+}
+/*responsivo*/
+@media (max-width: 768px) {
+    #header-container {
+        padding: 0 10px; /* Reduz o espaçamento lateral */
+    }
+
+    #main-logo {
+        max-width: 80px; /* Diminui a logo em telas menores */
+    }
+
+    .nav-item a {
+        font-size: 14px; /* Reduz o tamanho da fonte nos links */
+    }
+
+    .hamburger {
+        display: block; /* Exibir botão em telas pequenas */
+    }
+
+    .menu {
+        display: none; /* Esconder menu por padrão */
+        flex-direction: column;
+        background: #f9f9f9;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+
+    .menu.active {
+        display: flex; /* Exibir menu quando ativo */
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #main-logo {
+        max-width: 120px;
+    }
+
+    .nav-item a {
+        font-size: 14px;
+    }
+
+    #footer-info {
+        font-size: 12px;
+    }
+}
+
