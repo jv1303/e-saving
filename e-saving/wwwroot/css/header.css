@@ -124,6 +124,22 @@ and log-in buttons, or the user
 
     font-size: 20px;
 }
+#user-box {
+    position: absolute;
+    top: 80px;
+    right: 68px;
+    display: flex;
+    justify-content: space-between;
+
+    width: 170px;
+    padding: 6px 15px 6px 15px;
+    
+    background-color: #fff;
+    box-shadow: 0 0 10px -3px;
+}
+#user-box ul {
+    list-style: none;
+}
 
 /* styles for the sing-in button */
 #singin-button {

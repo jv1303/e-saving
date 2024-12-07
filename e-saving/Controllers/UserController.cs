@@ -42,5 +42,6 @@ public class UserController : Controller
 
         return RedirectToAction("Index", "Home");
     }
+    
 
 }
