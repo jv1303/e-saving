@@ -12,13 +12,35 @@ public class UserController : Controller
         _logger = logger;
     }
 
-    public IActionResult Register()
+    public IActionResult UserRegister()
+    {
+        return View();
+    }
+    public IActionResult PartnerRegister()
+    {
+        return View();
+    }
+    public IActionResult BuyerRegister()
     {
         return View();
     }
     public IActionResult Login()
     {
         return View();
+    }
+
+    [HttpPost]
+    public IActionResult DoLogin()
+    {
+        // aqui vai o codigo pra quando o cara logar
+
+        return RedirectToAction("Index", "Home");
+    }
+    public IActionResult DoRegister()
+    {
+         // aqui vai o codigo pra quando o cara se cadastrar
+
+        return RedirectToAction("Index", "Home");
     }
 
 }
