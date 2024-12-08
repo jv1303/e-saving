@@ -48,7 +48,6 @@ public class UserController : Controller
         return RedirectToAction("Index", "Home");
     }
     
-    
     public async Task<IActionResult> DoClienteRegister(Cliente cliente) //inserir
     {
         // aqui vai o codigo pra quando o cliente se cadastrar
