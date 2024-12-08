@@ -3,8 +3,8 @@ const inputDiv = document.getElementsByClassName("user-input");
 const submit = document.getElementById("submit-button");
 const userForm = document.getElementById("user-form");
 const inputElement = document.getElementsByClassName("input-element");
-const emails = document.getElementsByName("email")
-const passwords = document.getElementsByName("password")
+const emails = document.getElementsByClassName("email")
+const passwords = document.getElementsByClassName("password")
 
 
 function next() {

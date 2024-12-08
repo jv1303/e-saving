@@ -1,7 +1,7 @@
 @{
     Layout = "~/Views/Shared/_Layout_2.cshtml";
     ViewData["Title"] = "Cadastro";
-    ViewData["Action"] = "DoRegister";
+    ViewData["Action"] = "DoClienteRegister";
     ViewData["Submit"] = "Próximo";
     ViewData["SubmitTabIndex"] = 4;
     ViewData["Extra"] = "";
@@ -10,20 +10,20 @@
 
 <div id="register-user-form" class="user-form">
     <div class="user-input text-input display-2">
-        <label for="email">Email</label>
-        <input class="input-element" type="email" name="email" id="email" tabindex="1" autofocus required>
+        <label for="EmailCliente">Email</label>
+        <input class="email input-element" type="email" name="EmailCliente" id="email" tabindex="1" autofocus required>
     </div>
     <div class="user-input text-input display-2">
         <label for="email-confirm">Confirmar o email</label>
-        <input class="input-element" type="email" name="email" id="email-confirm" tabindex="1" autofocus required>
+        <input class="email input-element" type="email" id="email-confirm" tabindex="1" autofocus required>
     </div>
     <div class="user-input text-input display-1 hidden">
-        <label for="password">Senha</label>
-        <input class="input-element" type="password" name="password" id="password" tabindex="2">
+        <label for="SenhaCliente">Senha</label>
+        <input class="password input-element" type="password" name="SenhaCliente" id="password" tabindex="2">
     </div>
         <div class="user-input text-input display-1 hidden">
         <label for="password-confirm">Confirmar senha</label>
-        <input class="input-element" type="password" name="password" id="password-confirm" tabindex="2">
+        <input class="password input-element" type="password" id="password-confirm" tabindex="2">
     </div>
     <div class="user-input checkbox-input display-1 hidden">
         <label for="terms" tabindex="3"> Concordo com os termos de uso e política de privacidade</label>

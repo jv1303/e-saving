@@ -20,7 +20,7 @@
 
             <h2>@ViewData["Title"]</h2>
 
-            <form method="post" asp-controller="Home" asp-action="UpdateUserLogged" id="user-form">
+            <form method="post" asp-controller="User" asp-action="DoClienteRegister" id="user-form">
                 @RenderBody()
                 <input type="text" name="userLogged" value="true" class="hidden">
                 <input type="button" value="@ViewData["Submit"]" id="submit-button" tabindex="@ViewData["SubmitTabIndex"]" onclick="next()" name="userLogged">

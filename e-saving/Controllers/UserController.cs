@@ -1,16 +1,27 @@
+using e_saving.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace e_saving.Controllers.User;
 
 public class UserController : Controller
 {
-    private readonly ILogger<UserController> _logger;
+    //private readonly ILogger<UserController> _logger;
+    
+    private readonly Contexto _contexto;
 
+    public UserController (Contexto contexto)
+    {
+        _contexto = contexto;
+    }
+    
+    /*
     public UserController(ILogger<UserController> logger)
     {
         _logger = logger;
     }
+    */
 
     public IActionResult UserRegister()
     {
@@ -36,9 +47,14 @@ public class UserController : Controller
 
         return RedirectToAction("Index", "Home");
     }
-    public IActionResult DoRegister()
+    
+    
+    public async Task<IActionResult> DoClienteRegister(Cliente cliente) //inserir
     {
-         // aqui vai o codigo pra quando o cara se cadastrar
+        // aqui vai o codigo pra quando o cliente se cadastrar
+        
+        await _contexto.clientes.AddAsync(cliente); 
+        await _contexto.SaveChangesAsync();
 
         return RedirectToAction("Index", "Home");
     }
