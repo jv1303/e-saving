@@ -32,17 +32,17 @@
     </div>
 
     <div class="user-input text-input display-2 hidden">
-        <label for="CepComprador">Cep</label>
-        <input class="input-element smallest-height" type="text" name="CepComprador" id="cep" tabindex="5">
+        <label for="CepComprador">CEP</label>
+        <input class="input-element smallest-height" type="text" name="CepComprador" id="cep" tabindex="5" onfocusout="buscarEndereco()">
     </div>
     <div class="two-boxes">
         <div class="user-input text-input large-textbox display-2 hidden">
             <label for="LogradouroComprador">Logradouro</label>
-            <input class="input-element smallest-height" type="text" name="LogradouroComprador" id="logradouro" tabindex="-1" disabled>
+            <input class="input-element smallest-height" type="text" name="LogradouroComprador" id="logradouro" tabindex="-1" onfocusout="buscarEndereco()">
         </div>
         <div class="user-input text-input small-textbox display-2 hidden">
-            <label for="numero-logradouro">Número</label>
-            <input class="input-element smallest-height " type="text" name="numero-logradouro" id="numero" tabindex="6">
+            <label for="numeroLogradouro">Número</label>
+            <input class="input-element smallest-height " type="text" name="numeroLogradouro" id="numero" tabindex="6">
         </div>
     </div>
     <div class="user-input text-input display-2 hidden">

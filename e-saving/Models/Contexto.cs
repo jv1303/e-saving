@@ -31,13 +31,13 @@ namespace e_saving.Models
         public DbSet<Compra> compra {get; set;}
 
         public DbSet<Funcionario> funcionarios {get; set;}
-
+        /*
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) // para depuração
         {
             optionsBuilder.EnableSensitiveDataLogging();
             optionsBuilder.LogTo(Console.WriteLine);
         }
-
+        */
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Configura a chave composta de Fornece
