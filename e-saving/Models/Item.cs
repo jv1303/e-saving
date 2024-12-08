@@ -22,9 +22,9 @@ public class Item
         [MaxLength(50)]
         public string Tipo {get; set;}
 
-        public int IdPontoColeta {get; set;}
+        public int? IdPontoColeta {get; set;}
 
-        public int IdEstoque {get; set;}
+        public int? IdEstoque {get; set;}
 
         //Propriedade de navegação para Fornece (Lista)
         //Coleção de Fornece associados a este item

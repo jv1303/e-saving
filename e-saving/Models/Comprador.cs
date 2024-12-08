@@ -10,7 +10,7 @@ public class Comprador
         [MaxLength(25)]
         public string CnpjComprador {get; set;}
 
-        public byte[] FotoDePerfilComprador {get; set;} // Rever no futuro
+        public byte[]? FotoDePerfilComprador {get; set;} // Rever no futuro
 
         [MaxLength(150)]
         public string EmailComprador {get; set;}
@@ -28,7 +28,7 @@ public class Comprador
         public string LogradouroComprador {get; set;}
         
         [MaxLength(255)]
-        public string ComplementoComprador {get; set;}
+        public string? ComplementoComprador {get; set;}
 
         //Propriedade de navegação para ContaBanco (Lista)
         //Coleção de ContasBancos associados a este Comprador

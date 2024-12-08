@@ -28,7 +28,6 @@ namespace e_saving.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ComplementoCliente")
-                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("TEXT");
 
@@ -38,10 +37,9 @@ namespace e_saving.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<byte[]>("FotoPerfilCliente")
-                        .IsRequired()
                         .HasColumnType("BLOB");
 
-                    b.Property<int>("ItensDescartados")
+                    b.Property<int?>("ItensDescartados")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("LogradouroCliente")
@@ -55,11 +53,10 @@ namespace e_saving.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PontoFavoritoCliente")
-                        .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("PontosClientes")
+                    b.Property<int?>("PontosClientes")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("SenhaCliente")
@@ -100,7 +97,6 @@ namespace e_saving.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ComplementoComprador")
-                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("TEXT");
 
@@ -110,7 +106,6 @@ namespace e_saving.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<byte[]>("FotoDePerfilComprador")
-                        .IsRequired()
                         .HasColumnType("BLOB");
 
                     b.Property<string>("LogradouroComprador")
@@ -153,17 +148,14 @@ namespace e_saving.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CnpjComprador")
-                        .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CpfCliente")
-                        .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CpfParceiro")
-                        .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("TEXT");
 
@@ -184,7 +176,7 @@ namespace e_saving.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Quantidade")
+                    b.Property<int?>("Quantidade")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("IdEstoque");
@@ -225,10 +217,9 @@ namespace e_saving.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<byte[]>("FotoPerfilFuncionario")
-                        .IsRequired()
                         .HasColumnType("BLOB");
 
-                    b.Property<int>("IdEstoque")
+                    b.Property<int?>("IdEstoque")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("NomeFuncionario")
@@ -259,10 +250,10 @@ namespace e_saving.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("IdEstoque")
+                    b.Property<int?>("IdEstoque")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("IdPontoColeta")
+                    b.Property<int?>("IdPontoColeta")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("ModeloItem")
@@ -299,7 +290,6 @@ namespace e_saving.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ComplementoParceiro")
-                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("TEXT");
 
@@ -309,7 +299,6 @@ namespace e_saving.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<byte[]>("FotoPerfilParceiro")
-                        .IsRequired()
                         .HasColumnType("BLOB");
 
                     b.Property<string>("LogradouroParceiro")
@@ -322,7 +311,7 @@ namespace e_saving.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("PontosParceiro")
+                    b.Property<int?>("PontosParceiro")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("SenhaParceiro")
@@ -351,10 +340,10 @@ namespace e_saving.Migrations
                         .HasMaxLength(25)
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("ItensColetados")
+                    b.Property<int?>("ItensColetados")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Pontuacao")
+                    b.Property<int?>("Pontuacao")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("IdPontoColeta");
@@ -387,21 +376,15 @@ namespace e_saving.Migrations
                 {
                     b.HasOne("e_saving.Models.Comprador", "Comprador")
                         .WithMany("ContasBancos")
-                        .HasForeignKey("CnpjComprador")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CnpjComprador");
 
                     b.HasOne("e_saving.Models.Cliente", "Cliente")
                         .WithMany("ContasBancos")
-                        .HasForeignKey("CpfCliente")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CpfCliente");
 
                     b.HasOne("e_saving.Models.Parceiro", "Parceiro")
                         .WithMany("ContasBancos")
-                        .HasForeignKey("CpfParceiro")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CpfParceiro");
 
                     b.Navigation("Cliente");
 
@@ -437,9 +420,7 @@ namespace e_saving.Migrations
                 {
                     b.HasOne("e_saving.Models.Estoque", "Estoque")
                         .WithMany("Funcionarios")
-                        .HasForeignKey("IdEstoque")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdEstoque");
 
                     b.Navigation("Estoque");
                 });
@@ -448,15 +429,11 @@ namespace e_saving.Migrations
                 {
                     b.HasOne("e_saving.Models.Estoque", "Estoque")
                         .WithMany("Itens")
-                        .HasForeignKey("IdEstoque")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdEstoque");
 
                     b.HasOne("e_saving.Models.PontoColeta", "PontoColeta")
                         .WithMany("Itens")
-                        .HasForeignKey("IdPontoColeta")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdPontoColeta");
 
                     b.Navigation("Estoque");
 

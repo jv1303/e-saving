@@ -13,13 +13,13 @@ public class PontoColeta
         [MaxLength(25)]
         public string CnpjParceiro {get; set;}
 
-        public int ItensColetados {get; set;}
+        public int? ItensColetados {get; set;}
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdPontoColeta {get; set;}
 
-        public int Pontuacao {get; set;}
+        public int? Pontuacao {get; set;}
 
 
         //Chave estrangeira
