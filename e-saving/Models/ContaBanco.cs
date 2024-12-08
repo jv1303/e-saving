@@ -20,13 +20,13 @@ public class ContaBanco
         public string NumeroConta {get; set;}
 
         [MaxLength(25)]
-        public string CpfParceiro {get; set;}
+        public string? CpfParceiro {get; set;}
 
         [MaxLength(25)]
-        public string CnpjComprador {get; set;}
+        public string? CnpjComprador {get; set;}
 
         [MaxLength(25)]
-        public string CpfCliente {get; set;}
+        public string? CpfCliente {get; set;}
 
         //métodos para a chave estrangeira
         public Parceiro Parceiro {get;set;}

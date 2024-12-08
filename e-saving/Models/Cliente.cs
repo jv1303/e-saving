@@ -15,18 +15,27 @@ public class Cliente
         
         [MaxLength(30)]
         public string SenhaCliente {get; set;}
-
+        
         [MaxLength(130)]
         public string EmailCliente {get; set;}
 
-        public int ItensDescartados  {get; set;} // cabível alterações
+        [MaxLength(20)]
+        public string CepCliente {get; set;}
 
-        public byte [] FotoPerfilCliente {get; set;}
+        [MaxLength(255)]
+        public string LogradouroCliente {get; set;}
+        
+        [MaxLength(255)]
+        public string? ComplementoCliente {get; set;}
 
-        public int PontosClientes {get; set;}
+        public int? ItensDescartados  {get; set;} // cabível alterações
+
+        public byte []? FotoPerfilCliente {get; set;}
+
+        public int? PontosClientes {get; set;}
         
         [MaxLength(25)]
-        public string PontoFavoritoCliente {get; set;}
+        public string? PontoFavoritoCliente {get; set;}
 
         //Propriedade de navegação para Fornece (Lista)
         //Coleção de Fornece associados a este Cliente

@@ -1,12 +1,12 @@
 @{
     Layout = "~/Views/Shared/_Layout_2.cshtml";
     ViewData["Title"] = "Cadastro";
-    ViewData["Action"] = "DoClienteRegister";
+    ViewData["Action"] = "DoBuyerRegister";
     ViewData["Submit"] = "Próximo";
     ViewData["SubmitTabIndex"] = 11;
     ViewData["Extra"] = "";
-    ViewData["ExtraController"] = "User";
-    ViewData["ExtraAction"] = "Login";
+    ViewData["ExtraController"] = "";
+    ViewData["ExtraAction"] = "";
     ViewData["ExtraTabIndex"] = -1;
     ViewData["HideSubmit"] = "";
 }
@@ -14,17 +14,17 @@
 <div id="register-user-form" class="user-form">
 
     <div class="user-input text-input display-4">
-        <label for="CpfCliente">CPF</label>
-        <input class="input-element" type="text" name="CpfCliente" id="cpf" tabindex="1" autofocus required>
+        <label for="CnpjComprador">CNPJ</label>
+        <input class="input-element" type="text" name="CnpjComprador" id="cnpj" tabindex="1" required>
     </div>
     <div class="user-input text-input display-4">
-        <label for="NomeCliente">Nome</label>
-        <input class="input-element" type="text" name="NomeCliente" id="nome" tabindex="2" required>
+        <label for="RazaoSocial">Razão social</label>
+        <input class="input-element" type="text" name="RazaoSocial" id="razao-social" tabindex="2" required>
     </div>
 
     <div class="user-input text-input display-3 hidden">
-        <label for="EmailCliente">Email</label>
-        <input class="email input-element" type="email" name="EmailCliente" id="email" tabindex="3">
+        <label for="EmailComprador">Email</label>
+        <input class="email input-element" type="email" name="EmailComprador" id="email" tabindex="3">
     </div>
     <div class="user-input text-input display-3 hidden">
         <label for="email-confirm">Confirmar o email</label>
@@ -32,13 +32,13 @@
     </div>
 
     <div class="user-input text-input display-2 hidden">
-        <label for="CepCliente">CEP</label>
-        <input class="input-element smallest-height" type="text" name="CepCliente" id="cep" tabindex="5" onfocusout="buscarEndereco()">
+        <label for="CepComprador">Cep</label>
+        <input class="input-element smallest-height" type="text" name="CepComprador" id="cep" tabindex="5">
     </div>
     <div class="two-boxes">
         <div class="user-input text-input large-textbox display-2 hidden">
-            <label for="LogradouroCliente">Logradouro</label>
-            <input class="input-element smallest-height" type="text" name="LogradouroCliente" id="logradouro" tabindex="-1" disabled>
+            <label for="LogradouroComprador">Logradouro</label>
+            <input class="input-element smallest-height" type="text" name="LogradouroComprador" id="logradouro" tabindex="-1" disabled>
         </div>
         <div class="user-input text-input small-textbox display-2 hidden">
             <label for="numero-logradouro">Número</label>
@@ -46,8 +46,8 @@
         </div>
     </div>
     <div class="user-input text-input display-2 hidden">
-        <label for="ComplementoCliente">Complemento</label>
-        <input class="input-element smallest-height" type="text" name="ComplementoCliente" id="complemento" tabindex="7">
+        <label for="ComplementoComprador">Complemento</label>
+        <input class="input-element smallest-height" type="text" name="ComplementoComprador" id="complemento" tabindex="7">
     </div>
     <div class="two-boxes">
         <div class="user-input text-input large-textbox display-2 hidden"> @* não irá pra DB *@
@@ -61,8 +61,8 @@
     </div>
 
     <div class="user-input text-input display-1 hidden">
-        <label for="SenhaCliente">Senha</label>
-        <input class="password input-element" type="password" name="SenhaCliente" id="password" tabindex="8">
+        <label for="SenhaComprador">Senha</label>
+        <input class="password input-element" type="password" name="SenhaComprador" id="password" tabindex="8">
     </div>
         <div class="user-input text-input display-1 hidden">
         <label for="password-confirm">Confirmar senha</label>

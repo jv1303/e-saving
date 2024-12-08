@@ -12,3 +12,39 @@ body {
 main {
     margin: 0 8vw 0 8vw;
 }
+
+#top-img {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content-section {
+    width: 70%;
+    text-align: center;
+}
+.section-subtitle-light {
+    font-size: 42px;
+    font-weight: 300;
+    color: #77B255;
+}
+.section-subtitle-bold {
+    font-size: 42px;
+    font-weight: 800;
+    color: #77B255;
+}
+.section-paragraph, .section-list {
+    font-size: 26px;
+    font-weight: 300;
+    margin: 40px;
+}
+.section-list {
+    list-style: none;
+}
+.section-list li {
+    margin-bottom: 20px;
+}

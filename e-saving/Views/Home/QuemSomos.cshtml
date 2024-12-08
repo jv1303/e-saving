@@ -1,7 +1,37 @@
 @{
     ViewData["Title"] = "Quem somos";
 }
+<asp:content contentplaceholderid="head" runat="server">
+    <link rel="stylesheet" href="~/css/quemSomos.css" asp-append-version="true" />
+</asp:content>
 
-<div>
-    <h2>quem somos</h2>
+<div class="grid">
+    <img src="~/images/quemSomos.png" alt="" id="top-img">
+
+    <section class="content-section">
+        <p class="section-paragraph">
+            A E-Saving é uma startup inovadora dedicada à reciclagem de lixo eletrônico, com o objetivo de transformar o descarte tecnológico em uma fonte de valor sustentável. Nossa missão é reduzir o impacto ambiental causado pelo descarte inadequado de dispositivos eletrônicos, promovendo a reutilização de materiais e a preservação de recursos naturais.
+        </p>
+        <p class="section-paragraph">
+            Atuamos com soluções ecológicas e tecnológicas para empresas e consumidores, garantindo que aparelhos como celulares, computadores e baterias sejam descartados de maneira responsável e reaproveitados de forma eficiente.
+        </p>
+    </section>
+    <section class="content-section">
+        <h2 class="section-subtitle-light">Missão</h2>
+        <p class="section-paragraph">
+            Promover a sustentabilidade e o reaproveitamento de recursos por meio da reciclagem responsável de lixo eletrônico.
+        </p>
+        <h2 class="section-subtitle-light">Visão</h2>
+        <p class="section-paragraph">
+            Ser referência no setor de reciclagem de lixo eletrônico, liderando práticas inovadoras que impactem positivamente o meio ambiente e promovam a economia circular, inspirando empresas e consumidores a adotar um consumo tecnológico mais sustentável.
+        </p>
+        <h2 class="section-subtitle-light">Valores</h2>
+        <ul class="section-list">
+            <li>Sustentabilidade</li>
+            <li>Inovação</li>
+            <li>Transparência</li>
+            <li>Responsabilidade Social</li>
+            <li>Compromisso com o Futuro</li>
+        </ul>
+    </section>
 </div>

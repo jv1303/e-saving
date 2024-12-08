@@ -76,7 +76,7 @@ form {
 }
 
 /* styles for the submit button */
-#submit-button {
+.button {
     transition: all 200ms ease-in;
     
     width: 72%;
@@ -93,8 +93,8 @@ form {
     color: #fff;
     font-size: 26px;
     font-weight: 300;
-} #submit-button:hover,
-#submit-button:focus {
+} .button:hover,
+.button:focus {
     transition: all 200ms ease-in;
 
     background-color: #8ec96d;
@@ -102,6 +102,27 @@ form {
 
     box-shadow: 0 0 10px -2px #77B255;
     cursor: pointer;
+}
+.button-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+}
+.button-input .button {
+    margin-bottom: 5px;
+}
+.button-label {
+    margin-bottom: 30px;
+    cursor: auto;
+}
+#choose-form a {
+    text-decoration: none;
+}
+#choose-form a input {
+    margin-top: 0;
 }
 
 /****** RenderBody styles :) ******/
@@ -146,6 +167,22 @@ label {
     border-color: #8ec96d;
     box-shadow: 0 0 5px 0px #77B255;
     outline: 0;
+}
+
+.two-boxes {
+    display: flex;
+    justify-content: space-between;
+    max-width: 72%;
+}
+.large-textbox {
+    width: 70%;
+}
+.small-textbox {
+    width: 15%;
+}
+.text-input .smallest-height {
+    height: 45px;
+    margin-bottom: 20px;
 }
 
 /* checkbox styles */

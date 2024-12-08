@@ -18,10 +18,13 @@ namespace e_saving.Migrations
                     NomeCliente = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
                     SenhaCliente = table.Column<string>(type: "TEXT", maxLength: 30, nullable: false),
                     EmailCliente = table.Column<string>(type: "TEXT", maxLength: 130, nullable: false),
-                    ItensDescartados = table.Column<int>(type: "INTEGER", nullable: false),
-                    FotoPerfilCliente = table.Column<byte[]>(type: "BLOB", nullable: false),
-                    PontosClientes = table.Column<int>(type: "INTEGER", nullable: false),
-                    PontoFavoritoCliente = table.Column<string>(type: "TEXT", maxLength: 25, nullable: false)
+                    CepCliente = table.Column<string>(type: "TEXT", maxLength: 20, nullable: false),
+                    LogradouroCliente = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
+                    ComplementoCliente = table.Column<string>(type: "TEXT", maxLength: 255, nullable: true),
+                    ItensDescartados = table.Column<int>(type: "INTEGER", nullable: true),
+                    FotoPerfilCliente = table.Column<byte[]>(type: "BLOB", nullable: true),
+                    PontosClientes = table.Column<int>(type: "INTEGER", nullable: true),
+                    PontoFavoritoCliente = table.Column<string>(type: "TEXT", maxLength: 25, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -33,10 +36,13 @@ namespace e_saving.Migrations
                 columns: table => new
                 {
                     CnpjComprador = table.Column<string>(type: "TEXT", maxLength: 25, nullable: false),
-                    FotoDePerfilComprador = table.Column<byte[]>(type: "BLOB", nullable: false),
+                    FotoDePerfilComprador = table.Column<byte[]>(type: "BLOB", nullable: true),
                     EmailComprador = table.Column<string>(type: "TEXT", maxLength: 150, nullable: false),
                     SenhaComprador = table.Column<string>(type: "TEXT", maxLength: 30, nullable: false),
-                    RazaoSocial = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false)
+                    RazaoSocial = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
+                    CepComprador = table.Column<string>(type: "TEXT", maxLength: 20, nullable: false),
+                    LogradouroComprador = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
+                    ComplementoComprador = table.Column<string>(type: "TEXT", maxLength: 255, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -49,7 +55,7 @@ namespace e_saving.Migrations
                 {
                     IdEstoque = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Quantidade = table.Column<int>(type: "INTEGER", nullable: false)
+                    Quantidade = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -64,8 +70,11 @@ namespace e_saving.Migrations
                     SenhaParceiro = table.Column<string>(type: "TEXT", maxLength: 30, nullable: false),
                     EmailParceiro = table.Column<string>(type: "TEXT", maxLength: 150, nullable: false),
                     NomeParceiro = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
-                    FotoPerfilParceiro = table.Column<byte[]>(type: "BLOB", nullable: false),
-                    PontosParceiro = table.Column<int>(type: "INTEGER", nullable: false)
+                    FotoPerfilParceiro = table.Column<byte[]>(type: "BLOB", nullable: true),
+                    PontosParceiro = table.Column<int>(type: "INTEGER", nullable: true),
+                    CepParceiro = table.Column<string>(type: "TEXT", maxLength: 20, nullable: false),
+                    LogradouroParceiro = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
+                    ComplementoParceiro = table.Column<string>(type: "TEXT", maxLength: 255, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -105,8 +114,8 @@ namespace e_saving.Migrations
                     NomeUsuario = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
                     EmailConstitucional = table.Column<string>(type: "TEXT", maxLength: 150, nullable: false),
                     NomeFuncionario = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
-                    FotoPerfilFuncionario = table.Column<byte[]>(type: "BLOB", nullable: false),
-                    IdEstoque = table.Column<int>(type: "INTEGER", nullable: false)
+                    FotoPerfilFuncionario = table.Column<byte[]>(type: "BLOB", nullable: true),
+                    IdEstoque = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -115,8 +124,7 @@ namespace e_saving.Migrations
                         name: "FK_funcionarios_estoques_IdEstoque",
                         column: x => x.IdEstoque,
                         principalTable: "estoques",
-                        principalColumn: "IdEstoque",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "IdEstoque");
                 });
 
             migrationBuilder.CreateTable(
@@ -127,9 +135,9 @@ namespace e_saving.Migrations
                     Banco = table.Column<string>(type: "TEXT", maxLength: 75, nullable: false),
                     NumeroConta = table.Column<string>(type: "TEXT", maxLength: 20, nullable: false),
                     Bandeira = table.Column<string>(type: "TEXT", maxLength: 15, nullable: false),
-                    CpfParceiro = table.Column<string>(type: "TEXT", maxLength: 25, nullable: false),
-                    CnpjComprador = table.Column<string>(type: "TEXT", maxLength: 25, nullable: false),
-                    CpfCliente = table.Column<string>(type: "TEXT", maxLength: 25, nullable: false)
+                    CpfParceiro = table.Column<string>(type: "TEXT", maxLength: 25, nullable: true),
+                    CnpjComprador = table.Column<string>(type: "TEXT", maxLength: 25, nullable: true),
+                    CpfCliente = table.Column<string>(type: "TEXT", maxLength: 25, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -138,20 +146,17 @@ namespace e_saving.Migrations
                         name: "FK_contasBanco_clientes_CpfCliente",
                         column: x => x.CpfCliente,
                         principalTable: "clientes",
-                        principalColumn: "CpfCliente",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "CpfCliente");
                     table.ForeignKey(
                         name: "FK_contasBanco_compradores_CnpjComprador",
                         column: x => x.CnpjComprador,
                         principalTable: "compradores",
-                        principalColumn: "CnpjComprador",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "CnpjComprador");
                     table.ForeignKey(
                         name: "FK_contasBanco_parceiros_CpfParceiro",
                         column: x => x.CpfParceiro,
                         principalTable: "parceiros",
-                        principalColumn: "CpfParceiro",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "CpfParceiro");
                 });
 
             migrationBuilder.CreateTable(
@@ -161,8 +166,8 @@ namespace e_saving.Migrations
                     IdPontoColeta = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     CnpjParceiro = table.Column<string>(type: "TEXT", maxLength: 25, nullable: false),
-                    ItensColetados = table.Column<int>(type: "INTEGER", nullable: false),
-                    Pontuacao = table.Column<int>(type: "INTEGER", nullable: false),
+                    ItensColetados = table.Column<int>(type: "INTEGER", nullable: true),
+                    Pontuacao = table.Column<int>(type: "INTEGER", nullable: true),
                     CpfParceiro = table.Column<string>(type: "TEXT", maxLength: 25, nullable: false)
                 },
                 constraints: table =>
@@ -185,8 +190,8 @@ namespace e_saving.Migrations
                     Valor = table.Column<double>(type: "REAL", nullable: false),
                     ModeloItem = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
                     Tipo = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
-                    IdPontoColeta = table.Column<int>(type: "INTEGER", nullable: false),
-                    IdEstoque = table.Column<int>(type: "INTEGER", nullable: false)
+                    IdPontoColeta = table.Column<int>(type: "INTEGER", nullable: true),
+                    IdEstoque = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -195,14 +200,12 @@ namespace e_saving.Migrations
                         name: "FK_items_estoques_IdEstoque",
                         column: x => x.IdEstoque,
                         principalTable: "estoques",
-                        principalColumn: "IdEstoque",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "IdEstoque");
                     table.ForeignKey(
                         name: "FK_items_pontosColeta_IdPontoColeta",
                         column: x => x.IdPontoColeta,
                         principalTable: "pontosColeta",
-                        principalColumn: "IdPontoColeta",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "IdPontoColeta");
                 });
 
             migrationBuilder.CreateTable(

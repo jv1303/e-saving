@@ -24,9 +24,9 @@ public class Funcionario
         [MaxLength(255)]
         public string NomeFuncionario {get; set;}
 
-        public byte [] FotoPerfilFuncionario {get; set;}
+        public byte []? FotoPerfilFuncionario {get; set;}
 
-        public int IdEstoque {get; set;}
+        public int? IdEstoque {get; set;}
         
         //Propriedade de navegação para estoque (Lista)
         public Estoque Estoque {get; set;}
