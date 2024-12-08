@@ -45,7 +45,7 @@ public class UserController : Controller
     {
         // aqui vai o codigo pra quando o cara logar
 
-        return RedirectToAction("Index", "Home");
+        return RedirectToAction("UpdateUserLogged", "Home");
     }
     
     [HttpPost]
@@ -56,6 +56,4 @@ public class UserController : Controller
 
         return RedirectToAction("UpdateUserLogged", "Home");
     }
-    
-
 }
