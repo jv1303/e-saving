@@ -10,7 +10,7 @@ using e_saving.Models;
 namespace e_saving.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20241208182432_dbEsaving")]
+    [Migration("20241208210656_dbEsaving")]
     partial class dbEsaving
     {
         /// <inheritdoc />
@@ -46,7 +46,6 @@ namespace e_saving.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("LogradouroCliente")
-                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("TEXT");
 

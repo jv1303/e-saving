@@ -19,7 +19,7 @@ namespace e_saving.Migrations
                     SenhaCliente = table.Column<string>(type: "TEXT", maxLength: 30, nullable: false),
                     EmailCliente = table.Column<string>(type: "TEXT", maxLength: 130, nullable: false),
                     CepCliente = table.Column<string>(type: "TEXT", maxLength: 20, nullable: false),
-                    LogradouroCliente = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
+                    LogradouroCliente = table.Column<string>(type: "TEXT", maxLength: 255, nullable: true),
                     ComplementoCliente = table.Column<string>(type: "TEXT", maxLength: 255, nullable: true),
                     ItensDescartados = table.Column<int>(type: "INTEGER", nullable: true),
                     FotoPerfilCliente = table.Column<byte[]>(type: "BLOB", nullable: true),
