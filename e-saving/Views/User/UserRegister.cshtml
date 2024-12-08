@@ -3,7 +3,7 @@
     ViewData["Title"] = "Cadastro";
     ViewData["Action"] = "DoClienteRegister";
     ViewData["Submit"] = "Próximo";
-    ViewData["SubmitTabIndex"] = 8;
+    ViewData["SubmitTabIndex"] = 11;
     ViewData["Extra"] = "";
     ViewData["ExtraController"] = "User";
     ViewData["ExtraAction"] = "Login";
@@ -12,38 +12,70 @@
 }
 
 <div id="register-user-form" class="user-form">
-    <div class="user-input text-input display-3">
+
+    <div class="user-input text-input display-4">
         <label for="CpfCliente">CPF</label>
         <input class="input-element" type="text" name="CpfCliente" id="cpf" tabindex="1" autofocus required>
     </div>
-    <div class="user-input text-input display-3">
+    <div class="user-input text-input display-4">
         <label for="NomeCliente">Nome</label>
-        <input class="input-element" type="text" name="NomeCliente" id="nome" tabindex="2" autofocus required>
+        <input class="input-element" type="text" name="NomeCliente" id="nome" tabindex="2" required>
     </div>
-    <div class="user-input text-input display-2 hidden">
+
+    <div class="user-input text-input display-3 hidden">
         <label for="EmailCliente">Email</label>
-        <input class="email input-element" type="email" name="EmailCliente" id="email" tabindex="3" autofocus>
+        <input class="email input-element" type="email" name="EmailCliente" id="email" tabindex="3">
+    </div>
+    <div class="user-input text-input display-3 hidden">
+        <label for="email-confirm">Confirmar o email</label>
+        <input class="email input-element" type="email" id="email-confirm" tabindex="4">
+    </div>
+
+    <div class="user-input text-input display-2 hidden">
+        <label for="CepCliente">Cep</label>
+        <input class="input-element smallest-height" type="text" name="CepCliente" id="cep" tabindex="5">
+    </div>
+    <div class="two-boxes">
+        <div class="user-input text-input large-textbox display-2 hidden">
+            <label for="LogradouroCliente">Logradouro</label>
+            <input class="input-element smallest-height" type="text" name="LogradouroCliente" id="logradouro" tabindex="-1" disabled>
+        </div>
+        <div class="user-input text-input small-textbox display-2 hidden">
+            <label for="numero-logradouro">Número</label>
+            <input class="input-element smallest-height " type="text" name="numero-logradouro" id="numero" tabindex="6">
+        </div>
     </div>
     <div class="user-input text-input display-2 hidden">
-        <label for="email-confirm">Confirmar o email</label>
-        <input class="email input-element" type="email" id="email-confirm" tabindex="4" autofocus>
+        <label for="ComplementoCliente">Complemento</label>
+        <input class="input-element smallest-height" type="text" name="ComplementoCliente" id="complemento" tabindex="7">
     </div>
+    <div class="two-boxes">
+        <div class="user-input text-input large-textbox display-2 hidden"> @* não irá pra DB *@
+            <label for="cidade">Cidade</label>
+            <input class="input-element smallest-height" type="text" name="cidade" id="cidade" tabindex="-1" disabled>
+        </div>
+        <div class="user-input text-input display-2 hidden small-textbox"> @* não irá pra DB *@
+            <label for="estado">Estado</label>
+            <input class="input-element smallest-height" type="text" name="estado" id="estado" tabindex="-1" disabled>
+        </div>
+    </div>
+
     <div class="user-input text-input display-1 hidden">
         <label for="SenhaCliente">Senha</label>
-        <input class="password input-element" type="password" name="SenhaCliente" id="password" tabindex="5">
+        <input class="password input-element" type="password" name="SenhaCliente" id="password" tabindex="8">
     </div>
         <div class="user-input text-input display-1 hidden">
         <label for="password-confirm">Confirmar senha</label>
-        <input class="password input-element" type="password" id="password-confirm" tabindex="6">
+        <input class="password input-element" type="password" id="password-confirm" tabindex="9">
     </div>
     <div class="user-input checkbox-input display-1 hidden">
-        <label for="terms" tabindex="7"> Concordo com os termos de uso e política de privacidade</label>
+        <label for="terms" tabindex="10"> Concordo com os termos de uso e política de privacidade</label>
         <input type="checkbox" name="terms" id="terms" class="sc-gJwTLC checkbox-element input-element">
     </div>
 </div>
 
 <script>
     isRegister = true
-    inputCount = 6
-    nextCount = 2
+    inputCount = 12
+    nextCount = 3
 </script>
