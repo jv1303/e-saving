@@ -20,10 +20,11 @@
 
             <h2>@ViewData["Title"]</h2>
 
-            <form method="post" asp-action="@ViewData["Action"]">
+            <form method="post" asp-controller="Context" asp-action="@ViewData["Action"]" id="user-form">
                 @RenderBody()
-                <input type="submit" value="@ViewData["Submit"]" id="submit-button" tabindex="@ViewData["SubmitTabIndex"]">
-                <a href="#" class="form-link" tabindex="@ViewData["ExtraTabIndex"]">@ViewData["Extra"]</a>
+                <input type="text" name="userLogged" value="true" class="hidden">
+                <input type="button" value="@ViewData["Submit"]" id="submit-button" class="button @ViewData["HideSubmit"]" tabindex="@ViewData["SubmitTabIndex"]" onclick="next()" name="userLogged">
+                <a asp-controller="@ViewData["ExtraController"]" asp-action="@ViewData["ExtraAction"]" class="form-link" tabindex="@ViewData["ExtraTabIndex"]">@ViewData["Extra"]</a>
             </form>
 
         </div>
@@ -37,6 +38,9 @@
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/headerUserDiv.js" asp-append-version="true"></script>
+    <script src="~/js/register.js" asp-append-version="true"></script>
+    <script src="~/js/cepApi.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

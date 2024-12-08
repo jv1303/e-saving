@@ -1,0 +1,81 @@
+@{
+    Layout = "~/Views/Shared/_Layout_2.cshtml";
+    ViewData["Title"] = "Cadastro";
+    ViewData["Action"] = "DoBuyerRegister";
+    ViewData["Submit"] = "Próximo";
+    ViewData["SubmitTabIndex"] = 11;
+    ViewData["Extra"] = "";
+    ViewData["ExtraController"] = "";
+    ViewData["ExtraAction"] = "";
+    ViewData["ExtraTabIndex"] = -1;
+    ViewData["HideSubmit"] = "";
+}
+
+<div id="register-user-form" class="user-form">
+
+    <div class="user-input text-input display-4">
+        <label for="CnpjComprador">CNPJ</label>
+        <input class="input-element" type="text" name="CnpjComprador" id="cnpj" tabindex="1" required>
+    </div>
+    <div class="user-input text-input display-4">
+        <label for="RazaoSocial">Razão social</label>
+        <input class="input-element" type="text" name="RazaoSocial" id="razao-social" tabindex="2" required>
+    </div>
+
+    <div class="user-input text-input display-3 hidden">
+        <label for="EmailComprador">Email</label>
+        <input class="email input-element" type="email" name="EmailComprador" id="email" tabindex="3">
+    </div>
+    <div class="user-input text-input display-3 hidden">
+        <label for="email-confirm">Confirmar o email</label>
+        <input class="email input-element" type="email" id="email-confirm" tabindex="4">
+    </div>
+
+    <div class="user-input text-input display-2 hidden">
+        <label for="CepComprador">CEP</label>
+        <input class="input-element smallest-height" type="text" name="CepComprador" id="cep" tabindex="5" onfocusout="buscarEndereco()">
+    </div>
+    <div class="two-boxes">
+        <div class="user-input text-input large-textbox display-2 hidden">
+            <label for="LogradouroComprador">Logradouro</label>
+            <input class="input-element smallest-height" type="text" name="LogradouroComprador" id="logradouro" tabindex="-1" onfocusout="buscarEndereco()">
+        </div>
+        <div class="user-input text-input small-textbox display-2 hidden">
+            <label for="numeroLogradouro">Número</label>
+            <input class="input-element smallest-height " type="text" name="numeroLogradouro" id="numero" tabindex="6">
+        </div>
+    </div>
+    <div class="user-input text-input display-2 hidden">
+        <label for="ComplementoComprador">Complemento</label>
+        <input class="input-element smallest-height" type="text" name="ComplementoComprador" id="complemento" tabindex="7">
+    </div>
+    <div class="two-boxes">
+        <div class="user-input text-input large-textbox display-2 hidden"> @* não irá pra DB *@
+            <label for="cidade">Cidade</label>
+            <input class="input-element smallest-height" type="text" name="cidade" id="cidade" tabindex="-1" disabled>
+        </div>
+        <div class="user-input text-input display-2 hidden small-textbox"> @* não irá pra DB *@
+            <label for="estado">Estado</label>
+            <input class="input-element smallest-height" type="text" name="estado" id="estado" tabindex="-1" disabled>
+        </div>
+    </div>
+
+    <div class="user-input text-input display-1 hidden">
+        <label for="SenhaComprador">Senha</label>
+        <input class="password input-element" type="password" name="SenhaComprador" id="password" tabindex="8">
+    </div>
+        <div class="user-input text-input display-1 hidden">
+        <label for="password-confirm">Confirmar senha</label>
+        <input class="password input-element" type="password" id="password-confirm" tabindex="9">
+    </div>
+    <div class="user-input checkbox-input display-1 hidden">
+        <label for="terms" tabindex="10"> Concordo com os termos de uso e política de privacidade</label>
+        <input type="checkbox" name="terms" id="terms" class="sc-gJwTLC checkbox-element input-element">
+    </div>
+</div>
+
+<script>
+    isRegister = true
+    inputCount = 12
+    nextCount = 3
+</script>

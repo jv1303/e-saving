@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using e_saving.Models;
+using variables.Models;
 
 namespace e_saving.Controllers.Home;
 
@@ -15,33 +16,40 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        return View(RepositorioGlobalVariables.Variables);
     }
     public IActionResult QuemSomos()
     {
-        return View();
+        return View(RepositorioGlobalVariables.Variables);
     }
     public IActionResult PontosColeta()
     {
-        return View();
+        return View(RepositorioGlobalVariables.Variables);
     }
     public IActionResult AreaParceiro()
     {
-        return View();
+        return View(RepositorioGlobalVariables.Variables);
     }
     public IActionResult SejaParceiro()
     {
-        return View();
+        return View(RepositorioGlobalVariables.Variables);
     }
 
     public IActionResult SejaComprador()
     {
-        return View();
+        return View(RepositorioGlobalVariables.Variables);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
+    // [HttpPost]
+    public IActionResult UpdateUserLogged()
+    {
+        RepositorioGlobalVariables.SwitchUserLogged();
+        return RedirectToAction("Index");
     }
 }

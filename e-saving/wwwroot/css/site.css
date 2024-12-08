@@ -12,3 +12,87 @@ body {
 main {
     margin: 0 8vw 0 8vw;
 }
+
+#top-img {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content-section {
+    width: 70%;
+    text-align: center;
+}
+.section-subtitle-light {
+    font-size: 42px;
+    font-weight: 300;
+    color: #77B255;
+}
+.section-subtitle-bold {
+    font-size: 42px;
+    font-weight: 800;
+    color: #77B255;
+    margin: 40px;
+}
+.section-paragraph, .section-list {
+    font-size: 26px;
+    font-weight: 300;
+    margin: 40px;
+}
+.section-list {
+    list-style: none;
+}
+.section-list li {
+    margin-bottom: 20px;
+}
+
+.generic-button a {
+    transition: all 100ms ease-in;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration: none;
+
+    border-radius: 70px;
+    border: #77B255 solid 2px;
+    margin: 8px;
+    width: 320px;
+    height: 120px;
+
+    background-color: #fff;
+    color: #60A640;
+} .generic-button a:hover {
+    transition: all 100ms ease-in;
+
+    background-color: #60A640;
+    color: #D0FF00;
+}
+
+.widelist {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.widelist-item {
+    display: flex;
+    align-items: center;
+    margin: 50px;
+    /* width: 40%; */
+}
+.widelist-img {
+    width: 100px;
+    margin-right: 20px;
+}
+.widelist-label {
+    font-size: 42px;
+    font-weight: 800;
+    color: #77B255;
+}

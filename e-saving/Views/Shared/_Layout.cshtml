@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="~/css/header.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/footer.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/e_saving.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/responsivo.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/responsive.css" asp-append-version="true" />
     <asp:contentPlaceholder id="head" runat="server" />
+
 </head>
 
 <body>
@@ -18,7 +19,6 @@
     <header>
 
         @* LOGO *@
-
         <h1>
             <a asp-area="" asp-controller="Home" asp-action="Index">
                 <img src="~/images/logo.png" alt="Logo" border="0" id="main-logo">
@@ -57,7 +57,13 @@
             @* ## tag is filled with different content depending if the user is logged or not ## *@
 
             <div id="user-div"></div>
-
+            
+            <div id="user-box" class="mouseOut" onmouseover="boolBoxIn()" onmouseleave="boolBoxOut(), hideBox()" onclick="logOut()">
+                <img src="~/images/logout.png" alt=''>
+                <ul>
+                    <li>Sair</li>
+                </ul>
+            </div>
         </div>
 
     </header>
@@ -132,12 +138,17 @@
 
     </footer>
 
+    @model variables.Models.GlobalVariables
+        <script>
+            var isUserLogged = @Model.userLogged;
+            console.log(isUserLogged)
+        </script>
     @* JS scripts *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/headerUserDiv.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/indexFooter.js" asp-append-version="true"></script>
-    <script src="~/js/script.js" asp-append-version="true"></script>
+    <script src="~/js/hamburguer.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
 </body>

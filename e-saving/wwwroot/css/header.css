@@ -1,9 +1,16 @@
 /* styles for the site header */
 
+h1 a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
 #main-logo {
     width: 150px;
     padding: 10px;
     margin-left: 8px;
+    max-width: 120px;
+    height: auto;
 }
 
 /* main header style */
@@ -96,6 +103,7 @@ and log-in buttons, or the user
 
     margin: 8px;
     min-width: 252px;
+    z-index: 2;
 }
 
 /* styles for the sing-in and log-in buttons */
@@ -162,6 +170,49 @@ and log-in buttons, or the user
     transition: all 200ms ease-in;
 
     background-color: #fff;
+}
+
+#user-box {
+    position: absolute;
+    right: 68px;
+    justify-content: space-between;
+
+    width: 170px;
+    padding: 15px 15px 6px 15px;
+    border-radius:  0 0 20px 20px;
+    
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: 0 0 10px -3px;
+    z-index: 1;
+}#user-box:hover {
+    background-color: #f5f5f5;
+}
+#user-box img {
+    height: 20px;
+}
+#user-box ul {
+    list-style: none;
+}
+.mouseIn {
+    animation-name: userBoxIn;
+    animation-duration: 100ms;
+    top: 56px;
+    display: flex;
+}
+.mouseOut {
+    animation-name: userBoxOut;
+    animation-duration: 100ms;
+    display: none;
+    top: 30px;
+}
+@keyframes userBoxIn {
+    from {top: 30px;}
+    to {top: 56px;}
+}
+@keyframes userBoxOut {
+    from {top: 56px;}
+    to {top: 30px;}
 }
 
 /* styles for the user name */
