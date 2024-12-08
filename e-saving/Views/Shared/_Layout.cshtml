@@ -57,8 +57,9 @@
             @* ## tag is filled with different content depending if the user is logged or not ## *@
 
             <div id="user-div"></div>
-            <div id="user-box" class="mouseOut" onmouseover="boolBoxIn()" onmouseleave="boolBoxOut()">
-                <img src="~/images/down-arrow.png" alt=''>
+            
+            <div id="user-box" class="mouseOut" onmouseover="boolBoxIn()" onmouseleave="boolBoxOut(), hideBox()" onclick="gg()">
+                <img src="~/images/logout.png" alt=''>
                 <ul>
                     <li>Sair</li>
                 </ul>
