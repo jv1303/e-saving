@@ -12,7 +12,7 @@ public class Estoque
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdEstoque {get; set;}
 
-        public int Quantidade {get; set;}
+        public int? Quantidade {get; set;}
 
         //Propriedade de navegação para Compra (Lista)
         //Coleção de Compra associados a este estoque
