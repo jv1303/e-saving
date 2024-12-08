@@ -23,7 +23,7 @@ public class Cliente
         public string CepCliente {get; set;}
 
         [MaxLength(255)]
-        public string LogradouroCliente {get; set;}
+        public string? LogradouroCliente {get; set;}
         
         [MaxLength(255)]
         public string? ComplementoCliente {get; set;}

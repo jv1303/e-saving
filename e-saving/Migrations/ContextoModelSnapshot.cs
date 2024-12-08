@@ -43,7 +43,6 @@ namespace e_saving.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("LogradouroCliente")
-                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("TEXT");
 
