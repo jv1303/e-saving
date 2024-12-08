@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
     line-height: 1.6;
     overflow-x: hidden; /* Evita rolagem horizontal desnecessária */
 }
@@ -97,12 +97,10 @@ nav {
         padding: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
-        z-index: 999; /* Sobrepõe outros elementos */
-        animation: fadeIn 0.3s ease-in-out;
     }
 
     .menu.active {
-        display: flex; /* Exibe menu */
+        display: flex; /* Exibe o menu quando ativo */
     }
 
     .menu ul {
@@ -122,6 +120,25 @@ nav {
     .menu ul li a:hover {
         background-color: #ddd;
     }
+    
+    #user-menu {
+        margin-top: 10px;
+        text-align: center;
+    }
+    
+    #user-menu a {
+        display: block;
+        padding: 10px;
+        color: #333;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    
+    #user-menu a:hover {
+        background-color: #ddd;
+    }
+    
 
     #footer-container {
         flex-direction: column; /* Alinha tudo na vertical */
