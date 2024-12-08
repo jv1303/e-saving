@@ -174,9 +174,12 @@ and log-in buttons, or the user
     padding: 15px 15px 6px 15px;
     border-radius:  0 0 20px 20px;
     
+    cursor: pointer;
     background-color: #fff;
     box-shadow: 0 0 10px -3px;
     z-index: 1;
+}#user-box:hover {
+    background-color: #f5f5f5;
 }
 #user-box img {
     height: 20px;
@@ -197,24 +200,12 @@ and log-in buttons, or the user
     top: 30px;
 }
 @keyframes userBoxIn {
-    from
-    {
-        top: 30px;
-    }
-    to
-    {
-        top: 56px;
-    }
+    from {top: 30px;}
+    to {top: 56px;}
 }
 @keyframes userBoxOut {
-    from
-    {
-        top: 56px;
-    }
-    to
-    {
-        top: 30px;
-    }
+    from {top: 56px;}
+    to {top: 30px;}
 }
 
 /* styles for the user name */

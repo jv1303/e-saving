@@ -13,7 +13,11 @@ public class UserController : Controller
     {
         _logger = logger;
     }
-    
+
+     public IActionResult Index()
+    {
+        return View();
+    }
     public IActionResult UserRegister()
     {
         return View();
