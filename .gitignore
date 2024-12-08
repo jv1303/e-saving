@@ -4,7 +4,8 @@
 ## Get latest from `dotnet new gitignore`
 
 repositorio-local.sln
-## eSaving.db
+eSaving.db-shm
+eSaving.db-wal
 
 # dotenv files
 .env

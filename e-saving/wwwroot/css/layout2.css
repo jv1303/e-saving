@@ -169,6 +169,22 @@ label {
     outline: 0;
 }
 
+.two-boxes {
+    display: flex;
+    justify-content: space-between;
+    max-width: 72%;
+}
+.large-textbox {
+    width: 70%;
+}
+.small-textbox {
+    width: 15%;
+}
+.text-input .smallest-height {
+    height: 45px;
+    margin-bottom: 20px;
+}
+
 /* checkbox styles */
 .checkbox-input {
     display: flex;
