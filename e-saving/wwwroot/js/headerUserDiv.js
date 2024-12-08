@@ -13,7 +13,7 @@ if (isUserLogged == true) {
     userNameTag.innerHTML += userName;  // puts the username into the HTML
 
 } else {
-    userDiv.innerHTML = "<a href='/User/UserRegister' id='singin-button'> Sing in </a> <a href='/User/Login' id='login-button'> Log in </a>";  // puts the sing-in and log-in buttons into the HTML
+    userDiv.innerHTML = "<a href='/User/' id='singin-button'> Sing in </a> <a href='/User/Login' id='login-button'> Log in </a>";  // puts the sing-in and log-in buttons into the HTML
 }
 
 function showBox() {
@@ -36,7 +36,7 @@ function boolBoxOut() {
     console.log(boxIn)
 }
 
-function gg() {
+function logOut() {
     fetch('/Home/UpdateUserLogged', {
         method: 'POST',
     })

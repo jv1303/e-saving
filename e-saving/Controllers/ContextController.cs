@@ -31,4 +31,22 @@ public class ContextController : Controller
 
         return RedirectToAction("UpdateUserLogged", "Home");
     }
+
+    [HttpPost]
+    public async Task<IActionResult> DoPartnerRegister(Parceiro parceiro)
+    {      
+        await _contexto.parceiros.AddAsync(parceiro); 
+        await _contexto.SaveChangesAsync();
+
+        return RedirectToAction("UpdateUserLogged", "Home");
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> DoBuyerRegister(Comprador comprador)
+    {      
+        await _contexto.compradores.AddAsync(comprador); 
+        await _contexto.SaveChangesAsync();
+
+        return RedirectToAction("UpdateUserLogged", "Home");
+    }
 }
