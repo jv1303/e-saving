@@ -1,9 +1,16 @@
 /* styles for the site header */
 
+h1 a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
 #main-logo {
     width: 150px;
     padding: 10px;
     margin-left: 8px;
+    max-width: 120px;
+    height: auto;
 }
 
 /* main header style */

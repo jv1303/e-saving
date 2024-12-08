@@ -22,17 +22,12 @@ body {
     overflow-y: hidden;
 }
 
-/* Logo */
-#main-logo {
-    max-width: 120px;
-    height: auto;
-}
 
 /* Navegação */
 nav {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 #nav-list {
@@ -41,18 +36,7 @@ nav {
 }
 
 .nav-item a {
-    font-size: 16px;
-    color: #000;
-    padding: 5px 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
     white-space: nowrap; /* Evita quebra de texto nos links */
-}
-
-.nav-item a:hover {
-    background-color: #f0f0f0;
-    color: #333;
 }
 
 /* Botão do Menu Hambúrguer */
