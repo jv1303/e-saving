@@ -21,6 +21,15 @@ public class Comprador
         [MaxLength(255)]
         public string RazaoSocial {get; set;}
 
+        [MaxLength(20)]
+        public string CepComprador {get; set;}
+
+        [MaxLength(255)]
+        public string LogradouroComprador {get; set;}
+        
+        [MaxLength(255)]
+        public string ComplementoComprador {get; set;}
+
         //Propriedade de navegação para ContaBanco (Lista)
         //Coleção de ContasBancos associados a este Comprador
         public ICollection<ContaBanco> ContasBancos {get;set;}
@@ -28,5 +37,6 @@ public class Comprador
         //Propriedade de navegação para Compra (Lista)
         //Coleção de Compra associados a este Comprador
         public ICollection<Compra> Compras { get; set; }
+
     }
 }

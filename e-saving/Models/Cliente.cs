@@ -15,7 +15,19 @@ public class Cliente
         
         [MaxLength(30)]
         public string SenhaCliente {get; set;}
-         
+        
+        [MaxLength(130)]
+        public string EmailCliente {get; set;}
+
+        [MaxLength(20)]
+        public string CepCliente {get; set;}
+
+        [MaxLength(255)]
+        public string LogradouroCliente {get; set;}
+        
+        [MaxLength(255)]
+        public string ComplementoCliente {get; set;}
+
         public int ItensDescartados  {get; set;} // cabível alterações
 
         public byte [] FotoPerfilCliente {get; set;}

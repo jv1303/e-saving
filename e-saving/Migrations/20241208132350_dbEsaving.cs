@@ -18,6 +18,9 @@ namespace e_saving.Migrations
                     NomeCliente = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
                     SenhaCliente = table.Column<string>(type: "TEXT", maxLength: 30, nullable: false),
                     EmailCliente = table.Column<string>(type: "TEXT", maxLength: 130, nullable: false),
+                    CepCliente = table.Column<string>(type: "TEXT", maxLength: 20, nullable: false),
+                    LogradouroCliente = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
+                    ComplementoCliente = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
                     ItensDescartados = table.Column<int>(type: "INTEGER", nullable: false),
                     FotoPerfilCliente = table.Column<byte[]>(type: "BLOB", nullable: false),
                     PontosClientes = table.Column<int>(type: "INTEGER", nullable: false),
@@ -36,7 +39,10 @@ namespace e_saving.Migrations
                     FotoDePerfilComprador = table.Column<byte[]>(type: "BLOB", nullable: false),
                     EmailComprador = table.Column<string>(type: "TEXT", maxLength: 150, nullable: false),
                     SenhaComprador = table.Column<string>(type: "TEXT", maxLength: 30, nullable: false),
-                    RazaoSocial = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false)
+                    RazaoSocial = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
+                    CepComprador = table.Column<string>(type: "TEXT", maxLength: 20, nullable: false),
+                    LogradouroComprador = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
+                    ComplementoComprador = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -65,7 +71,10 @@ namespace e_saving.Migrations
                     EmailParceiro = table.Column<string>(type: "TEXT", maxLength: 150, nullable: false),
                     NomeParceiro = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
                     FotoPerfilParceiro = table.Column<byte[]>(type: "BLOB", nullable: false),
-                    PontosParceiro = table.Column<int>(type: "INTEGER", nullable: false)
+                    PontosParceiro = table.Column<int>(type: "INTEGER", nullable: false),
+                    CepParceiro = table.Column<string>(type: "TEXT", maxLength: 20, nullable: false),
+                    LogradouroParceiro = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
+                    ComplementoParceiro = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false)
                 },
                 constraints: table =>
                 {

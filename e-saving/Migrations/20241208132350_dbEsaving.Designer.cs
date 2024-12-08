@@ -10,7 +10,7 @@ using e_saving.Models;
 namespace e_saving.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20241207232824_dbEsaving")]
+    [Migration("20241208132350_dbEsaving")]
     partial class dbEsaving
     {
         /// <inheritdoc />
@@ -25,6 +25,16 @@ namespace e_saving.Migrations
                         .HasMaxLength(25)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("CepCliente")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ComplementoCliente")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("EmailCliente")
                         .IsRequired()
                         .HasMaxLength(130)
@@ -36,6 +46,11 @@ namespace e_saving.Migrations
 
                     b.Property<int>("ItensDescartados")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("LogradouroCliente")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("NomeCliente")
                         .IsRequired()
@@ -82,6 +97,16 @@ namespace e_saving.Migrations
                         .HasMaxLength(25)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("CepComprador")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ComplementoComprador")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("EmailComprador")
                         .IsRequired()
                         .HasMaxLength(150)
@@ -90,6 +115,11 @@ namespace e_saving.Migrations
                     b.Property<byte[]>("FotoDePerfilComprador")
                         .IsRequired()
                         .HasColumnType("BLOB");
+
+                    b.Property<string>("LogradouroComprador")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("RazaoSocial")
                         .IsRequired()
@@ -266,6 +296,16 @@ namespace e_saving.Migrations
                         .HasMaxLength(25)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("CepParceiro")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ComplementoParceiro")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("EmailParceiro")
                         .IsRequired()
                         .HasMaxLength(150)
@@ -274,6 +314,11 @@ namespace e_saving.Migrations
                     b.Property<byte[]>("FotoPerfilParceiro")
                         .IsRequired()
                         .HasColumnType("BLOB");
+
+                    b.Property<string>("LogradouroParceiro")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("NomeParceiro")
                         .IsRequired()
