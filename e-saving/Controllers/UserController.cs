@@ -48,15 +48,13 @@ public class UserController : Controller
         return RedirectToAction("Index", "Home");
     }
     
-    
+    [HttpPost]
     public async Task<IActionResult> DoClienteRegister(Cliente cliente) //inserir
-    {
-        // aqui vai o codigo pra quando o cliente se cadastrar
-        
+    {      
         await _contexto.clientes.AddAsync(cliente); 
         await _contexto.SaveChangesAsync();
 
-        return RedirectToAction("Index", "Home");
+        return RedirectToAction("UpdateUserLogged", "Home");
     }
     
 
