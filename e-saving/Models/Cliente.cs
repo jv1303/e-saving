@@ -26,16 +26,16 @@ public class Cliente
         public string LogradouroCliente {get; set;}
         
         [MaxLength(255)]
-        public string ComplementoCliente {get; set;}
+        public string? ComplementoCliente {get; set;}
 
-        public int ItensDescartados  {get; set;} // cabível alterações
+        public int? ItensDescartados  {get; set;} // cabível alterações
 
-        public byte [] FotoPerfilCliente {get; set;}
+        public byte []? FotoPerfilCliente {get; set;}
 
-        public int PontosClientes {get; set;}
+        public int? PontosClientes {get; set;}
         
         [MaxLength(25)]
-        public string PontoFavoritoCliente {get; set;}
+        public string? PontoFavoritoCliente {get; set;}
 
         //Propriedade de navegação para Fornece (Lista)
         //Coleção de Fornece associados a este Cliente
