@@ -145,4 +145,76 @@ public class ContextController : Controller
         return RedirectToAction("UpdateUserLogged", "Home");
     }
 
+    [HttpPost]
+    public async Task<IActionResult> ExcluirParceiro(string cpfParceiro)
+    {      
+        Parceiro parceiro  = await _contexto.parceiros.FindAsync(cpfParceiro);
+        _contexto.parceiros.Remove(parceiro);
+        await _contexto.SaveChangesAsync();
+
+        return RedirectToAction("UpdateUserLogged", "Home");
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> ExcluirComprador(string cnpjComprador)
+    {      
+        Comprador comprador = await _contexto.compradores.FindAsync(cnpjComprador);
+        _contexto.compradores.Remove(comprador);
+        await _contexto.SaveChangesAsync();
+
+        return RedirectToAction("UpdateUserLogged", "Home");
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> AtualizarCliente(string cpfCliente) 
+    {
+
+        Cliente cliente = await _contexto.clientes.FindAsync(cpfCliente);
+  
+        return View(cliente);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> AtualizarCliente(Cliente cliente) 
+    {
+
+        _contexto.clientes.Update(cliente);
+        await _contexto.SaveChangesAsync();
+        return RedirectToAction("UpdateUserLogged", "Home");
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> AtualizarParceiro(string cpfParceiro) 
+    {
+
+        Parceiro parceiro = await _contexto.parceiros.FindAsync(cpfParceiro);
+  
+        return View(parceiro);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> AtualizarParceiro(Parceiro parceiro) 
+    {
+
+        _contexto.parceiros.Update(parceiro);
+        await _contexto.SaveChangesAsync();
+        return RedirectToAction("UpdateUserLogged", "Home");
+    } 
+
+    [HttpGet]
+    public async Task<IActionResult> AtualizarComprador(string cnpjComprador) 
+    {
+
+        Comprador comprador = await _contexto.compradores.FindAsync(cnpjComprador);
+  
+        return View(comprador);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> AtualizarComprador(Comprador comprador) 
+    {
+        _contexto.compradores.Update(comprador);
+        await _contexto.SaveChangesAsync();
+        return RedirectToAction("UpdateUserLogged", "Home");
+    } 
 }
