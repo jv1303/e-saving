@@ -159,7 +159,7 @@ public class ContextController : Controller
         _   contexto.clientes.Remove(cliente);
             await _contexto.SaveChangesAsync();
 
-            return RedirectToAction("UpdateUserLogged", "Home");
-        }
+        return RedirectToAction("UpdateUserLogged", "Home");
     }
+
 }
