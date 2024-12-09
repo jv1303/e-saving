@@ -152,19 +152,19 @@
     </script> *@
 
     <script>
-    var jsonData = @Html.Raw(ViewBag.JsonData);
+        var jsonData = @Html.Raw(ViewBag.JsonData);
 
-    var isUserLogged = jsonData.userLogged;
-    var isClient = jsonData.isCliente;
-    var isPartner = jsonData.isParceiro;
-    var isBuyer = jsonData.isComprador;
-    var nomeUsuario = "'"+jsonData.nome+"'";
+        var isUserLogged = jsonData.userLogged;
+        var isClient = jsonData.isCliente;
+        var isPartner = jsonData.isParceiro;
+        var isBuyer = jsonData.isComprador;
+        var nomeUsuario = jsonData.nome;
 
-    console.log(jsonData.userLogged); // Output: John
-    console.log(jsonData.isCliente);  // Output: 30
-    console.log(jsonData.isParceiro);  // Output: 30
-    console.log(jsonData.isComprador);  // Output: 30
-    console.log(jsonData.nome);  // Output: 30
+        console.log(jsonData.userLogged); // Output: John
+        console.log(jsonData.isCliente);  // Output: 30
+        console.log(jsonData.isParceiro);  // Output: 30
+        console.log(jsonData.isComprador);  // Output: 30
+        console.log(jsonData.nome);  // Output: 30
     </script>
 
     @* JS scripts *@

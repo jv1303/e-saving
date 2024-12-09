@@ -2,7 +2,7 @@ const userDiv = document.getElementById('user-div');  // gets the inner HTML of 
 const userBox = document.getElementById('user-box');
 var boxIn = false
 
-if (isUserLogged == true) {
+if (isUserLogged == "true") {
     userName = "Nome de usuário";  // defines the username
 
     userDiv.innerHTML = "<div id=\"logged-user-click\" onmouseover=\"showBox()\" onmouseleave=\"setTimeout(hideBox, 100)\"> <h6 id=\"user-name\"> <img src=\"/images/down-arrow.png\" id=\"user-down-arrow\" alt='Seta para baixo'> </h6> <img src=\"/images/user-icon.png\" alt=\"Ícone de usuário\" class=\"header-icon\"> </div>";  // puts the down arrow and user photo into the HTML

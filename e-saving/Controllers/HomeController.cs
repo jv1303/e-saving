@@ -23,34 +23,34 @@ public class HomeController : Controller
     }
     public IActionResult QuemSomos()
     {
-        return View(RepositorioGlobalVariables.Variables);
+        return View();
     }
     public IActionResult PontosColeta()
     {
-        return View(RepositorioGlobalVariables.Variables);
+        return View();
     }
     public IActionResult AreaParceiro()
     {
-        return View(RepositorioGlobalVariables.Variables);
+        return View();
     }
     public IActionResult SejaParceiro()
     {
-        return View(RepositorioGlobalVariables.Variables);
+        return View();
     }
 
     public IActionResult SejaComprador()
     {
-        return View(RepositorioGlobalVariables.Variables);
+        return View();
     }
 
     public IActionResult AreaUsuario()
     {
-        return View(RepositorioGlobalVariables.Variables);
+        return View();
     }
 
     public IActionResult AreaComprador()
     {
-        return View(RepositorioGlobalVariables.Variables);
+        return View();
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
