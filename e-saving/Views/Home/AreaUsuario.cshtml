@@ -1,5 +1,8 @@
+@model e_saving.Models.Cliente
+
 @{
     ViewData["Title"] = "Área do usuário";
+    ViewData["Title"] = "AtualizarCliente";
 }
 
 <script>
@@ -32,7 +35,7 @@
         <div class="edit-button" onclick="editToggle()">
             <img src="~/images/editar.png" alt="Ícone de um lápis">
         </div>
-        <form class="generic-form" action=""> 
+        <form class="generic-form" asp-action="AtualizarCliente"> 
             <div class="text-input">
                 <label for="NomeCliente">Nome</label>
                 <input class="form-input" type="text" name="NomeCliente" value="@* DB NomeCliente *@" disabled>
@@ -66,7 +69,7 @@
     </section>
     <section style="margin: 50px;">
         <div class="generic-button" id="delete">
-            <a href=''> Apagar cadastro </a>
+            <a href='/Contexto/ExcluirCliente'> Apagar cadastro </a>
         </div>
     </section>
 </div>

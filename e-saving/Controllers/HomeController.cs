@@ -16,8 +16,10 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View(RepositorioGlobalVariables.Variables);
-        // return View(InformacoesContainer.Clientes);
+        var data = RepositorioGlobalVariables.Variables;
+        ViewBag.JsonData = System.Text.Json.JsonSerializer.Serialize(data);
+        return View();
+        //return View(InformacoesContainer.Clientes);
     }
     public IActionResult QuemSomos()
     {
