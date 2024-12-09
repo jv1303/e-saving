@@ -1,5 +1,4 @@
 const userDiv = document.getElementById('user-div');  // gets the inner HTML of the user div
-var userName;  // gets the username
 const userBox = document.getElementById('user-box');
 var boxIn = false
 
@@ -10,7 +9,7 @@ if (isUserLogged == true) {
     // the username goes into the <h6> tag
 
     const userNameTag = document.getElementById('user-name');  // gets the tag where the username will go into
-    userNameTag.innerHTML += userName;  // puts the username into the HTML
+    userNameTag.innerHTML += nomeUsuario;  // puts the username into the HTML
 
 } else {
     userDiv.innerHTML = "<a href='/User/' id='singin-button'> Sing in </a> <a href='/User/Login' id='login-button'> Log in </a>";  // puts the sing-in and log-in buttons into the HTML

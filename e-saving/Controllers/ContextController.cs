@@ -15,23 +15,23 @@ public class ContextController : Controller
         _contexto = contexto;
     }
     
-    [HttpGet]
-    public async Task<IActionResult> ObterInformacoes()
-    {
-        var clientes = await _contexto.clientes.ToListAsync(); // await retorna uma lista tipada de um objeto da Db
-        var parceiros = await _contexto.parceiros.ToListAsync();
-        var compradores = await _contexto.compradores.ToListAsync();
+    // [HttpGet]
+    // public async Task<IActionResult> ObterInformacoes()
+    // {
+    //     var clientes = await _contexto.clientes.ToListAsync(); // await retorna uma lista tipada de um objeto da Db
+    //     var parceiros = await _contexto.parceiros.ToListAsync();
+    //     var compradores = await _contexto.compradores.ToListAsync();
 
-        // Criação de um ViewModel para encapsular as informações
-        var informacoesContainer = new InformacoesContainer
-        {
-            Clientes = clientes,
-            Parceiros = parceiros,
-            Compradores = compradores
-        };
+    //     // Criação de um ViewModel para encapsular as informações
+    //     var informacoesContainer = new InformacoesContainer
+    //     {
+    //         Clientes = clientes,
+    //         Parceiros = parceiros,
+    //         Compradores = compradores
+    //     };
 
-        return View(informacoesContainer);
-    }
+    //     return View(informacoesContainer);
+    // }
     
     [HttpPost]
     public IActionResult DoLogin(string email, string password)
@@ -41,7 +41,9 @@ public class ContextController : Controller
         bool usuarioValido = false;
 
         if ((usuario = _contexto.clientes.FirstOrDefault(u => u.EmailCliente == email && u.SenhaCliente == password)) != null) {
+
             RepositorioGlobalVariables.Variables.isCliente = "true";
+            RepositorioGlobalVariables.Variables.nome = ((Cliente)usuario).NomeCliente;
             usuarioValido = true;
         } else {
             RepositorioGlobalVariables.Variables.isCliente = "false";
@@ -50,6 +52,7 @@ public class ContextController : Controller
         if ((usuario = _contexto.parceiros.FirstOrDefault(u => u.EmailParceiro == email && u.SenhaParceiro == password)) != null) {
 
             RepositorioGlobalVariables.Variables.isParceiro = "true";
+            RepositorioGlobalVariables.Variables.nome = ((Parceiro)usuario).NomeParceiro;
             usuarioValido = true;
         } else {
             RepositorioGlobalVariables.Variables.isParceiro = "false";
@@ -58,6 +61,7 @@ public class ContextController : Controller
         if ((usuario = _contexto.compradores.FirstOrDefault(u => u.EmailComprador == email && u.SenhaComprador == password)) != null) {
 
             RepositorioGlobalVariables.Variables.isComprador= "true";
+            RepositorioGlobalVariables.Variables.nome = ((Comprador)usuario).RazaoSocial;
             usuarioValido = true;
         } else {
             RepositorioGlobalVariables.Variables.isComprador= "false";

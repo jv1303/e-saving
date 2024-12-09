@@ -1,11 +1,12 @@
 namespace variables.Models
 {
-    public class GlobalVariables
+    public class GlobalVariables // aqui é declarado a classe
     {
         public string userLogged {get; set;}
         public string isCliente {get; set;}
         public string isParceiro {get; set;}
         public string isComprador {get; set;}
+        public string nome {get; set;}
     }
 
     public static class RepositorioGlobalVariables
@@ -13,9 +14,10 @@ namespace variables.Models
 
         public static GlobalVariables Variables = new GlobalVariables {
             userLogged = "false",
-            isCliente = "false",
+            isCliente = "false",  // aqui é criado um novo objeto
             isParceiro = "false",
-            isComprador = "false"
+            isComprador = "false",
+            nome = "default"
         };
         
         public static string SwitchUserLogged()
