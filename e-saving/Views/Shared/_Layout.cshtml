@@ -141,7 +141,12 @@
     @model variables.Models.GlobalVariables
         <script>
             var isUserLogged = @Model.userLogged;
-            console.log(isUserLogged)
+            var isClient = @Model.isCliente;
+            var isPartner = @Model.isParceiro;
+            var isBuyer = @Model.isComprador;
+            console.log(isClient)
+            console.log(isPartner)
+            console.log(isBuyer)
         </script>
     @* JS scripts *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
