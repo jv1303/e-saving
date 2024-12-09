@@ -1,0 +1,9 @@
+h2 {
+    margin-bottom: 20px;
+}
+
+#map {
+    height: 400px; /* Tamanho do mapa */
+    width: 400px;
+    border: 2px solid #ccc; 
+}

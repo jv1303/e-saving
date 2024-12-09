@@ -1,7 +1,16 @@
+
+
 @{
     ViewData["Title"] = "Pontos de coleta";
 }
 
+@* link for the page CSS *@
+<asp:content contentplaceholderid="head" runat="server">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <link rel="stylesheet" href="~/css/styleMap.css">
+</asp:content>
+
 <div>
-    <h2>pontos de coleta</h2>
+    <h2>Pontos de coleta</h2>
+    <div id="map"></div>
 </div>
