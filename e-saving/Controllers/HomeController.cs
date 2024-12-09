@@ -41,6 +41,16 @@ public class HomeController : Controller
         return View(RepositorioGlobalVariables.Variables);
     }
 
+    public IActionResult AreaUsuario()
+    {
+        return View(RepositorioGlobalVariables.Variables);
+    }
+
+    public IActionResult AreaComprador()
+    {
+        return View(RepositorioGlobalVariables.Variables);
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

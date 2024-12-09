@@ -15,24 +15,6 @@ public class ContextController : Controller
         _contexto = contexto;
     }
     
-    // [HttpGet]
-    // public async Task<IActionResult> ObterInformacoes()
-    // {
-    //     var clientes = await _contexto.clientes.ToListAsync(); // await retorna uma lista tipada de um objeto da Db
-    //     var parceiros = await _contexto.parceiros.ToListAsync();
-    //     var compradores = await _contexto.compradores.ToListAsync();
-
-    //     // Criação de um ViewModel para encapsular as informações
-    //     var informacoesContainer = new InformacoesContainer
-    //     {
-    //         Clientes = clientes,
-    //         Parceiros = parceiros,
-    //         Compradores = compradores
-    //     };
-
-    //     return View(informacoesContainer);
-    // }
-    
     [HttpPost]
     public IActionResult DoLogin(string email, string password)
     {

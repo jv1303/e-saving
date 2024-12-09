@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="~/e_saving.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/responsive.css" asp-append-version="true" />
     <asp:contentPlaceholder id="head" runat="server" />
-
 </head>
 
 <body>
@@ -41,9 +40,6 @@
                     <li class="nav-item">
                         <a asp-area="" asp-controller="Home" asp-action="PontosColeta">Pontos de coleta</a>
                     </li>
-                    @* <li class="nav-item">
-                        <a asp-area="" asp-controller="Home" asp-action="AreaParceiro">Área do parceiro</a>
-                    </li> *@
                     <li class="nav-item">
                         <a asp-area="" asp-controller="Home" asp-action="SejaParceiro">Seja parceiro</a>
                     </li>
@@ -68,7 +64,7 @@
 
     </header>
 
-    <main role="main">
+    <main role="main" id="main">
         @RenderBody()
     </main>
 
@@ -106,18 +102,18 @@
                             <a asp-area="" asp-controller="Home" asp-action="QuemSomos">Quem somos?</a>
                         </li>
                         <li class="footer-nav-item">
-                            <a asp-area="" asp-controller="Home" asp-action="PontosColeta">Pontos de    coleta</a>
+                            <a asp-area="" asp-controller="Home" asp-action="PontosColeta">Pontos de coleta</a>
                         </li>
                         <li class="footer-nav-item">
-                            <a asp-area="" asp-controller="Home" asp-action="AreaParceiro">Área do  parceiro</a>
+                            <a asp-area="" asp-controller="Home" asp-action="AreaParceiro">Área do parceiro</a>
                         </li>
                     </span>
                     <span>
                         <li class="footer-nav-item">
-                            <a asp-area="" asp-controller="Home" asp-action="SejaParceiro">Seja     parceiro</a>
+                            <a asp-area="" asp-controller="Home" asp-action="SejaParceiro">Seja parceiro</a>
                         </li>
                         <li class="footer-nav-item">
-                            <a asp-area="" asp-controller="Home" asp-action="SejaComprador">Seja    comprador</a>
+                            <a asp-area="" asp-controller="Home" asp-action="SejaComprador">Seja comprador</a>
                         </li>
                         <li class="footer-nav-item">
                             <a asp-area="" asp-controller="Home" asp-action="">Contatos</a>
@@ -146,11 +142,13 @@
         var isBuyer = @Model.isComprador;
         var nomeUsuario = "@Model.nome";
 
-        console.log(nomeUsuario)
-        console.log(isClient)
+        console.log(isUserLogged)
+        console.log(isCliente)
         console.log(isPartner)
         console.log(isBuyer)
     </script>
+
+
 
     @* JS scripts *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
