@@ -15,24 +15,6 @@ public class ContextController : Controller
         _contexto = contexto;
     }
     
-    // [HttpGet]
-    // public async Task<IActionResult> ObterInformacoes()
-    // {
-    //     var clientes = await _contexto.clientes.ToListAsync(); // await retorna uma lista tipada de um objeto da Db
-    //     var parceiros = await _contexto.parceiros.ToListAsync();
-    //     var compradores = await _contexto.compradores.ToListAsync();
-
-    //     // Criação de um ViewModel para encapsular as informações
-    //     var informacoesContainer = new InformacoesContainer
-    //     {
-    //         Clientes = clientes,
-    //         Parceiros = parceiros,
-    //         Compradores = compradores
-    //     };
-
-    //     return View(informacoesContainer);
-    // }
-    
     [HttpPost]
     public IActionResult DoLogin(string email, string password)
     {
@@ -151,15 +133,88 @@ public class ContextController : Controller
         await _contexto.SaveChangesAsync();
 
         return RedirectToAction("UpdateUserLogged", "Home");
+    }
 
-        [HttpPost]
-        public async Task<IActionResult> ExcluirCliente(string cpfCliente)
-        {      
-            Cliente cliente = await _contexto.clientes.FindAsync(cpfCliente);
-        _   contexto.clientes.Remove(cliente);
-            await _contexto.SaveChangesAsync();
+    [HttpPost]
+    public async Task<IActionResult> ExcluirCliente(string cpfCliente)
+    {      
+        Cliente cliente = await _contexto.clientes.FindAsync(cpfCliente);
+        _contexto.clientes.Remove(cliente);
+        await _contexto.SaveChangesAsync();
 
         return RedirectToAction("UpdateUserLogged", "Home");
     }
 
+    [HttpPost]
+    public async Task<IActionResult> ExcluirParceiro(string cpfParceiro)
+    {      
+        Parceiro parceiro  = await _contexto.parceiros.FindAsync(cpfParceiro);
+        _contexto.parceiros.Remove(parceiro);
+        await _contexto.SaveChangesAsync();
+
+        return RedirectToAction("UpdateUserLogged", "Home");
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> ExcluirComprador(string cnpjComprador)
+    {      
+        Comprador comprador = await _contexto.compradores.FindAsync(cnpjComprador);
+        _contexto.compradores.Remove(comprador);
+        await _contexto.SaveChangesAsync();
+
+        return RedirectToAction("UpdateUserLogged", "Home");
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> AtualizarCliente(string cpfCliente) 
+    {
+
+        Cliente cliente = await _contexto.clientes.FindAsync(cpfCliente);
+  
+        return View(cliente);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> AtualizarCliente(Cliente cliente) 
+    {
+
+        _contexto.clientes.Update(cliente);
+        await _contexto.SaveChangesAsync();
+        return RedirectToAction("UpdateUserLogged", "Home");
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> AtualizarParceiro(string cpfParceiro) 
+    {
+
+        Parceiro parceiro = await _contexto.parceiros.FindAsync(cpfParceiro);
+  
+        return View(parceiro);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> AtualizarParceiro(Parceiro parceiro) 
+    {
+
+        _contexto.parceiros.Update(parceiro);
+        await _contexto.SaveChangesAsync();
+        return RedirectToAction("UpdateUserLogged", "Home");
+    } 
+
+    [HttpGet]
+    public async Task<IActionResult> AtualizarComprador(string cnpjComprador) 
+    {
+
+        Comprador comprador = await _contexto.compradores.FindAsync(cnpjComprador);
+  
+        return View(comprador);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> AtualizarComprador(Comprador comprador) 
+    {
+        _contexto.compradores.Update(comprador);
+        await _contexto.SaveChangesAsync();
+        return RedirectToAction("UpdateUserLogged", "Home");
+    } 
 }
