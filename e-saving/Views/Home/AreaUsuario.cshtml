@@ -1,27 +1,74 @@
 @{
     ViewData["Title"] = "Área do usuário";
 }
+
 <script>
     var restricao = "usuario"
 </script>
 
-@* <div class="grid">
+<div class="grid">
+    <h2 class="section-subtitle-bold">Área do usuário</h2>
     <section class="content-section">
-        <h2 class="section-subtitle-bold">Você não possui acesso a essa página!</h2>
-        <p class="section-paragraph">
-            Para conseguir acesso a esta página, faça login na sua conta.
-        </p>
-        <p class="section-paragraph">
-            Caso não possua uma conta, você pode facilmente realizar o cadastro como usuário, parceiro ou comprador.
-        </p>
+        <h2 class="section-subtitle-bold">Resumo</h2>
+        <ul class="widelist">
+            <li class="widelist-item">
+                <img src="~/images/coroa.png" alt="" class="widelist-img">
+                <div class="widelist-text-container">
+                    <h4 class="widelist-small">Pontos</h4>
+                    <h3 class="widelist-label">@* DB PontosClientes *@</h3>
+                </div>
+            </li>
+            <li class="widelist-item">
+                <img src="~/images/cubo.png" alt="" class="widelist-img">
+                <div class="widelist-text-container">
+                    <h4 class="widelist-small">Itens descartados</h4>
+                    <h3 class="widelist-label">@* DB ItensDescartados *@</h3>
+                </div>
+            </li>
+        </ul>
     </section>
-    <br><br><br><br>
-    <section style="display: flex; justify-content: space-around;">
-        <div class="generic-button">
-            <a href='/User/'> Cadastrar-se </a>
+    <section class="content-section">
+        <h2 class="section-subtitle-bold">Informações de cadastro</h2>
+        <div class="edit-button" onclick="editToggle()">
+            <img src="~/images/editar.png" alt="Ícone de um lápis">
         </div>
-        <div class="generic-button">
-            <a href='/User/Login'> Entrar </a>
+        <form class="generic-form" action=""> 
+            <div class="text-input">
+                <label for="NomeCliente">Nome</label>
+                <input class="form-input" type="text" name="NomeCliente" value="@* DB NomeCliente *@" disabled>
+            </div>
+            <div class="text-input">
+                <label for="EmailCliente">Email</label>
+                <input class="form-input" type="email" name="EmailCliente" value="@* DB EmailCliente *@" disabled>
+            </div>
+            <div class="text-input">
+                <label for="CpfCliente">CPF</label>
+                <input class="form-input" type="text" name="CpfCliente" value="@* DB CpfCliente *@" disabled>
+            </div>
+            <div class="text-input">
+                <label for="SenhaCliente">Senha</label>
+                <input class="form-input" type="text" name="SenhaCliente" value="@* DB SenhaCliente *@" disabled>
+            </div>
+            <div class="text-input">
+                <label for="CepCliente">CEP</label>
+                <input class="form-input" type="text" name="CepCliente" value="@* DB CepCliente *@" disabled>
+            </div>
+            <div class="text-input">
+                <label for="LogradouroCliente">Logradouro</label>
+                <input class="form-input" type="text" name="LogradouroCliente" value="@* DB LogradouroCliente *@" disabled>
+            </div>
+            <div class="text-input">
+                <label for="ComplementoCliente">Complemento</label>
+                <input class="form-input" type="text" name="ComplementoCliente" value="@* DB ComplementoCliente *@" disabled>
+            </div>
+            <input type="submit" class="form-submit" value="Confirmar" disabled>
+        </form>
+    </section>
+    <section style="margin: 50px;">
+        <div class="generic-button" id="delete">
+            <a href=''> Apagar cadastro </a>
         </div>
     </section>
-</div> *@
+</div>
+
+<script src="~/js/enableForm.js" asp-append-version="true"></script>

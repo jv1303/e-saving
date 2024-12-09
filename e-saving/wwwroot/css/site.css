@@ -96,3 +96,105 @@ main {
     font-weight: 800;
     color: #77B255;
 }
+.widelist-text-container {
+    display: flex;
+    flex-direction: column;
+}
+.widelist-small {
+    font-weight: 300;
+    font-size: 26px;
+}
+
+.generic-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+label {
+    cursor: pointer;
+}
+
+.text-input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 400px;
+    margin-right: 4%;
+} .text-input input {
+    transition: all 100ms ease-in;
+
+    width: 100%;
+    max-width: 100%;
+    height: 60px;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    font-size: 16px;
+
+    border: solid #77B255 2px;
+    border-radius: 5px;
+} .text-input input:focus {
+    transition: all 100ms ease-in;
+
+    border-color: #8ec96d;
+    box-shadow: 0 0 5px 0px #77B255;
+    outline: 0;
+}
+
+.edit-button img {
+    width: 40px;
+}
+.edit-button {
+    transition: all 100ms ease-in;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+
+    border-radius: 50px;
+    border: #77B255 solid 2px;
+    margin: 8px;
+    width: 80px;
+    height: 80px;
+
+    background-color: #fff;
+    color: #60A640;
+} .edit-button:hover {
+    transition: all 100ms ease-in;
+
+    border: #D0FF00 solid 2px;
+    background-color: #D0FF00;
+}
+
+.form-submit {
+    width: 400px;
+    height: 60px;
+    padding-left: 15px;
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 4%;
+
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #60A640;
+    color: #fff;
+} .form-submit:hover {
+    background-color: #77B255;
+}
+
+#delete a {
+    border: #bb0000 solid 2px;
+    color: #bb0000;
+} #delete a:hover {
+    background-color: #bb0000;
+    color: #fff;
+}
