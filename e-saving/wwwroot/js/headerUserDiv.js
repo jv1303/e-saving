@@ -16,7 +16,6 @@ if (isUserLogged == true) {
     userDiv.innerHTML = "<a href='/User/' id='singin-button'> Sing in </a> <a href='/User/Login' id='login-button'> Log in </a>";  // puts the sing-in and log-in buttons into the HTML
 }
 
-<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.getElementById("menu-toggle");
     const menu = document.getElementById("menu");
@@ -48,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="/User/Login" id="login-button">Log in</a>`;
     }
 });
-=======
 function showBox() {
     userBox.classList = "mouseIn"
 }
@@ -75,4 +73,3 @@ function logOut() {
     })
     location.reload()
 }
->>>>>>> 772dd62568b786da1aec56877fe7ba2ecdb8d00b
