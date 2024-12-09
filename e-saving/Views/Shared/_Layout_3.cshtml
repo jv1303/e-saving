@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Saving @ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <link rel="stylesheet" href="~/css/styleMap.css">
+    <asp:contentPlaceholder id="head" runat="server" />
+</head>
+
+<body>
+
+    <header>
+        <a asp-controller="Home" asp-action="Index" class="header-button">
+            <img src="~/images/inicio.png" alt="Ícone de uma seta">
+        </a>
+        <a asp-controller="Home" asp-action="QuemSomos" class="header-button">
+            <img src="~/images/organizacao.png" alt="Ícone de uma seta">
+        </a>
+        <a asp-controller="Home" asp-action="SejaParceiro" class="header-button">
+            <img src="~/images/parceria.png" alt="Ícone de uma seta">
+        </a>
+        <a asp-controller="Home" asp-action="SejaComprador" class="header-button">
+            <img src="~/images/compra.png" alt="Ícone de uma seta">
+        </a>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="~/js/scriptMap.js"></script>
+
+</body>
+</html>

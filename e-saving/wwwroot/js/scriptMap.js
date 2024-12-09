@@ -1,7 +1,5 @@
-// Criar o mapa centrado em São Paulo
-var map = L.map('map').setView([-23.5505, -46.6333], 12); // Coordenadas para São Paulo
+var map = L.map('map').setView([-23.5492, -46.7299], 13);
 
-// Adicionar camada de mapa (usando OpenStreetMap)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
@@ -9,21 +7,30 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Adicionar marcadores de ecopontos (Exemplo)
 var ecopontos = [
     {
-        name: "Ecoponto 1",
-        lat: -23.5635,
-        lon: -46.6545
+        name: "Ecoponto - Liberdade",
+        lat: -23.5561,
+        lon: -46.6346
     },
     {
-        name: "Ecoponto 2",
-        lat: -23.5580,
-        lon: -46.6340
+        name: "Ecoponto - Metalúrgicos",
+        lat: -23.5642,
+        lon: -46.8138
     },
     {
-        name: "Ecoponto 3",
-        lat: -23.5600,
-        lon: -46.6200
+        name: "Ecoponto - Vila dos Remédios",
+        lat: -23.5138,
+        lon: -46.7541
+    },
+    {
+        name: "Ecoponto - Parque Imperial",
+        lat: -23.4903,
+        lon: -46.8049
+    },
+    {
+        name: "Ecoponto - Jardim das Belezas",
+        lat: -23.5257,
+        lon: -46.8405
     }
-    // Adicione outros ecopontos aqui
 ];
 
 // Loop para adicionar os marcadores no mapa
