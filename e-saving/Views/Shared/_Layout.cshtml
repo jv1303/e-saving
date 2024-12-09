@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="~/e_saving.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/responsive.css" asp-append-version="true" />
     <asp:contentPlaceholder id="head" runat="server" />
+    <script>
+        var restricao;
+    </script>
 </head>
 
 <body>
@@ -143,12 +146,10 @@
         var nomeUsuario = "@Model.nome";
 
         console.log(isUserLogged)
-        console.log(isCliente)
+        console.log(isClient)
         console.log(isPartner)
         console.log(isBuyer)
     </script>
-
-
 
     @* JS scripts *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
