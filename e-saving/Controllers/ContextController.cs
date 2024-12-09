@@ -83,7 +83,7 @@ public class ContextController : Controller
         await _contexto.clientes.AddAsync(cliente); 
         await _contexto.SaveChangesAsync();
 
-        return RedirectToAction("UpdateUserLogged", "Home");
+       return RedirectToAction("Index", "Home");
     }
 
     [HttpPost]
@@ -107,7 +107,7 @@ public class ContextController : Controller
         await _contexto.parceiros.AddAsync(parceiro); 
         await _contexto.SaveChangesAsync();
 
-        return RedirectToAction("UpdateUserLogged", "Home");
+        return RedirectToAction("Index", "Home");
     }
 
     [HttpPost]
@@ -132,19 +132,33 @@ public class ContextController : Controller
         await _contexto.compradores.AddAsync(comprador); 
         await _contexto.SaveChangesAsync();
 
-        return RedirectToAction("UpdateUserLogged", "Home");
+        return RedirectToAction("Index", "Home");
     }
 
-    [HttpPost]
     public async Task<IActionResult> ExcluirCliente(string cpfCliente)
-    {      
-        Cliente cliente = await _contexto.clientes.FindAsync(cpfCliente);
-        _contexto.clientes.Remove(cliente);
-        await _contexto.SaveChangesAsync();
-
+    {
+    if (string.IsNullOrEmpty(cpfCliente))
+    {
+        Console.WriteLine("String nula");
         return RedirectToAction("UpdateUserLogged", "Home");
     }
 
+    
+    Cliente cliente = await _contexto.clientes.FindAsync(cpfCliente);
+
+    if (cliente == null)
+    {
+        Console.WriteLine("Cliente não encontrado");
+        return RedirectToAction("UpdateUserLogged", "Home");
+    }
+
+    
+    _contexto.clientes.Remove(cliente);
+    await _contexto.SaveChangesAsync();
+
+    Console.WriteLine("Excluído");
+    return RedirectToAction("UpdateUserLogged", "Home");
+}
     [HttpPost]
     public async Task<IActionResult> ExcluirParceiro(string cpfParceiro)
     {      

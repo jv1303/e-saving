@@ -50,7 +50,7 @@ main {
     margin-bottom: 20px;
 }
 
-.generic-button a {
+.generic-button {
     transition: all 100ms ease-in;
 
     display: flex;
@@ -69,7 +69,7 @@ main {
 
     background-color: #fff;
     color: #60A640;
-} .generic-button a:hover {
+} .generic-button:hover {
     transition: all 100ms ease-in;
 
     background-color: #60A640;
@@ -191,10 +191,10 @@ label {
     background-color: #77B255;
 }
 
-#delete a {
+#delete {
     border: #bb0000 solid 2px;
     color: #bb0000;
-} #delete a:hover {
+} #delete:hover {
     background-color: #bb0000;
     color: #fff;
 }

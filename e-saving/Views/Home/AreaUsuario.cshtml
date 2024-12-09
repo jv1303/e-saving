@@ -2,7 +2,6 @@
 
 @{
     ViewData["Title"] = "Área do usuário";
-    ViewData["Title"] = "AtualizarCliente";
 }
 
 <script>
@@ -35,7 +34,7 @@
         <div class="edit-button" onclick="editToggle()">
             <img src="~/images/editar.png" alt="Ícone de um lápis">
         </div>
-        <form class="generic-form" asp-action="AtualizarCliente"> 
+        <form method="post" asp-controller="Context" asp-action="AtualizarCliente" class="generic-form">
             <div class="text-input">
                 <label for="NomeCliente">Nome</label>
                 <input class="form-input" type="text" name="NomeCliente" value="@* DB NomeCliente *@" disabled>
@@ -45,8 +44,8 @@
                 <input class="form-input" type="email" name="EmailCliente" value="@* DB EmailCliente *@" disabled>
             </div>
             <div class="text-input">
-                <label for="CpfCliente">CPF</label>
-                <input class="form-input" type="text" name="CpfCliente" value="@* DB CpfCliente *@" disabled>
+                <label for="cpfCliente">CPF</label>
+                <input class="form-input" type="text" name="cpfCliente" value="@* DB CpfCliente *@" disabled>
             </div>
             <div class="text-input">
                 <label for="SenhaCliente">Senha</label>
@@ -64,13 +63,14 @@
                 <label for="ComplementoCliente">Complemento</label>
                 <input class="form-input" type="text" name="ComplementoCliente" value="@* DB ComplementoCliente *@" disabled>
             </div>
-            <input type="submit" class="form-submit" value="Confirmar" disabled>
+            <input type="submit" class="form-submit" value="Confirmar">
         </form>
     </section>
     <section style="margin: 50px;">
-        <div class="generic-button" id="delete">
-            <a href='/Contexto/ExcluirCliente'> Apagar cadastro </a>
-        </div>
+    <form asp-controller="Context" asp-action="ExcluirCliente" method="post">
+        <input type="hidden" name="cpfCliente">
+        <button type="submit" class="generic-button" id="delete">Apagar cadastro</button>
+    </form>
     </section>
 </div>
 
