@@ -15,7 +15,7 @@
 
     <div class="user-input text-input display-4">
         <label for="CpfParceiro">CPF</label>
-        <input class="input-element" type="text" name="CpfParceiro" id="cpf" tabindex="1" required>
+        <input class="input-element" type="text" name="CpfParceiro" id="cpf" tabindex="1" required oninput="formatarCPF(this)">
     </div>
     <div class="user-input text-input display-4">
         <label for="NomeParceiro">Nome</label>
@@ -74,8 +74,10 @@
     </div>
 </div>
 
+<script src="~/js/cpf.js"></script>
+
 <script>
-    isRegister = true
-    inputCount = 12
-    nextCount = 3
+    isRegister = true;
+    inputCount = 12;
+    nextCount = 3;
 </script>

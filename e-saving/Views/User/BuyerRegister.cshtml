@@ -15,7 +15,7 @@
 
     <div class="user-input text-input display-4">
         <label for="CnpjComprador">CNPJ</label>
-        <input class="input-element" type="text" name="CnpjComprador" id="cnpj" tabindex="1" required>
+        <input class="input-element" type="text" name="CnpjComprador" id="cnpj" tabindex="1" required oninput="formatarCNPJ(this)">
     </div>
     <div class="user-input text-input display-4">
         <label for="RazaoSocial">Razão social</label>
@@ -74,8 +74,10 @@
     </div>
 </div>
 
+<script src="~/js/cnpj.js"></script>
+
 <script>
-    isRegister = true
-    inputCount = 12
-    nextCount = 3
+    isRegister = true;
+    inputCount = 12;
+    nextCount = 3;
 </script>
