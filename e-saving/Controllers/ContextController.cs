@@ -15,6 +15,24 @@ public class ContextController : Controller
         _contexto = contexto;
     }
     
+    [HttpGet]
+    public async Task<IActionResult> ObterInformacoes()
+    {
+        var clientes = await _contexto.clientes.ToListAsync(); // await retorna uma lista tipada de um objeto da Db
+        var parceiros = await _contexto.parceiros.ToListAsync();
+        var compradores = await _contexto.compradores.ToListAsync();
+
+        // Criação de um ViewModel para encapsular as informações
+        var informacoesContainer = new InformacoesContainer
+        {
+            Clientes = clientes,
+            Parceiros = parceiros,
+            Compradores = compradores
+        };
+
+        return View(informacoesContainer);
+    }
+    
     [HttpPost]
     public IActionResult DoLogin(string email, string password)
     {
@@ -125,4 +143,15 @@ public class ContextController : Controller
 
         return RedirectToAction("UpdateUserLogged", "Home");
     }
+
+    [HttpPost]
+    public async Task<IActionResult> ExcluirCliente(string cpfCliente)
+    {      
+        Cliente cliente = await _contexto.clientes.FindAsync(cpfCliente);
+        _contexto.clientes.Remove(cliente);
+        await _contexto.SaveChangesAsync();
+
+        return RedirectToAction("UpdateUserLogged", "Home");
+    }
+
 }

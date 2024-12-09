@@ -25,27 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
         menu.classList.toggle("active");
     });
 
-    // Manipula o estado de login do usuário
-    var userLogged = false; // Simula o estado de login do usuário
-    const userDiv = document.getElementById('user-div');
-    var userName;
-
-    if (userLogged) {
-        userName = "Nome de usuário"; // Nome fictício do usuário
-
-        userDiv.innerHTML = `
-            <div id="logged-user-click">
-                <h6 id="user-name">
-                    ${userName}
-                    <img src="/images/down-arrow.png" id="user-down-arrow" alt="Seta para baixo">
-                </h6>
-                <img src="/images/user-icon.png" alt="Ícone de usuário" class="header-icon">
-            </div>`;
-    } else {
-        userDiv.innerHTML = `
-            <a href="/User/Register" id="singin-button">Sign in</a>
-            <a href="/User/Login" id="login-button">Log in</a>`;
-    }
 });
 function showBox() {
     userBox.classList = "mouseIn"
