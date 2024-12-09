@@ -16,7 +16,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View(RepositorioGlobalVariables.Variables);
+        return View(RepositorioGlobalVariables.Variables );
+        // return View(InformacoesContainer.Clientes);
     }
     public IActionResult QuemSomos()
     {

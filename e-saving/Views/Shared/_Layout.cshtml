@@ -41,9 +41,9 @@
                     <li class="nav-item">
                         <a asp-area="" asp-controller="Home" asp-action="PontosColeta">Pontos de coleta</a>
                     </li>
-                    <li class="nav-item">
+                    @* <li class="nav-item">
                         <a asp-area="" asp-controller="Home" asp-action="AreaParceiro">Área do parceiro</a>
-                    </li>
+                    </li> *@
                     <li class="nav-item">
                         <a asp-area="" asp-controller="Home" asp-action="SejaParceiro">Seja parceiro</a>
                     </li>
@@ -139,21 +139,23 @@
     </footer>
 
     @model variables.Models.GlobalVariables
-        <script>
-            var isUserLogged = @Model.userLogged;
-            var isClient = @Model.isCliente;
-            var isPartner = @Model.isParceiro;
-            var isBuyer = @Model.isComprador;
-            console.log(isClient)
-            console.log(isPartner)
-            console.log(isBuyer)
-        </script>
+    <script>
+        var isUserLogged = @Model.userLogged;
+        var isClient = @Model.isCliente;
+        var isPartner = @Model.isParceiro;
+        var isBuyer = @Model.isComprador;
+        console.log(isClient)
+        console.log(isPartner)
+        console.log(isBuyer)
+    </script>
+
     @* JS scripts *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/headerUserDiv.js" asp-append-version="true"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/indexFooter.js" asp-append-version="true"></script>
     <script src="~/js/hamburguer.js" asp-append-version="true"></script>
+    <script src="~/js/userShowHide.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
 </body>

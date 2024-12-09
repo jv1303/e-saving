@@ -41,21 +41,26 @@ public class ContextController : Controller
         bool usuarioValido = false;
 
         if ((usuario = _contexto.clientes.FirstOrDefault(u => u.EmailCliente == email && u.SenhaCliente == password)) != null) {
-
             RepositorioGlobalVariables.Variables.isCliente = "true";
             usuarioValido = true;
-        } 
+        } else {
+            RepositorioGlobalVariables.Variables.isCliente = "false";
+        }
         
         if ((usuario = _contexto.parceiros.FirstOrDefault(u => u.EmailParceiro == email && u.SenhaParceiro == password)) != null) {
 
             RepositorioGlobalVariables.Variables.isParceiro = "true";
             usuarioValido = true;
+        } else {
+            RepositorioGlobalVariables.Variables.isParceiro = "false";
         }
 
         if ((usuario = _contexto.compradores.FirstOrDefault(u => u.EmailComprador == email && u.SenhaComprador == password)) != null) {
 
             RepositorioGlobalVariables.Variables.isComprador= "true";
             usuarioValido = true;
+        } else {
+            RepositorioGlobalVariables.Variables.isComprador= "false";
         }
 
         if (!usuarioValido) {

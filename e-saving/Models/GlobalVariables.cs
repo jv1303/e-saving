@@ -26,6 +26,9 @@ namespace variables.Models
                 variable.userLogged = "true";
             } else {
                 variable.userLogged = "false";
+                variable.isCliente = "false";
+                variable.isParceiro = "false";
+                variable.isComprador = "false";
             }
 
             return variable.userLogged;
